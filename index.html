@@ -903,13 +903,13 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
   <div class="header-inner">
     <div class="header-logo">AEO <span>&</span> GEO</div>
     <nav class="header-nav" id="headerNav">
-      <button class="nav-btn active" onclick="scrollTo('overview')">Overview</button>
-      <button class="nav-btn" onclick="scrollTo('prereq')">Pre-course</button>
-      <button class="nav-btn" onclick="scrollTo('tools')">Toolstack</button>
-      <button class="nav-btn" onclick="scrollTo('tracks')">Tracks</button>
-      <button class="nav-btn" onclick="scrollTo('modules')">Modules</button>
-      <button class="nav-btn" onclick="scrollTo('capstone')">Capstone</button>
-      <button class="nav-btn" onclick="scrollTo('glossary')">Glossary</button>
+      <button class="nav-btn active" onclick="navScrollTo('overview')">Overview</button>
+      <button class="nav-btn" onclick="navScrollTo('prereq')">Pre-course</button>
+      <button class="nav-btn" onclick="navScrollTo('tools')">Toolstack</button>
+      <button class="nav-btn" onclick="navScrollTo('tracks')">Tracks</button>
+      <button class="nav-btn" onclick="navScrollTo('modules')">Modules</button>
+      <button class="nav-btn" onclick="navScrollTo('capstone')">Capstone</button>
+      <button class="nav-btn" onclick="navScrollTo('glossary')">Glossary</button>
     </nav>
     <div class="header-badge">v2 — Rebuilt</div>
   </div>
@@ -963,7 +963,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
 
 
     <!-- PRE-COURSE -->
-    <section class="section" id="prereq">
+    <section class="section" id="section-prereq">
       <div class="section-header">
         <div class="section-title">Pre-course requirements</div>
         <div class="section-sub">Mandatory before Module 0</div>
@@ -992,7 +992,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
     </section>
 
     <!-- TOOLSTACK -->
-    <section class="section" id="tools">
+    <section class="section" id="section-tools">
       <div class="section-header">
         <div class="section-title">Recommended toolstack</div>
         <div class="section-sub">Covered in Module 0, Session 3 — all 8 tools configured in lab</div>
@@ -1042,7 +1042,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
     </section>
 
     <!-- INDUSTRY TRACKS -->
-    <section class="section" id="tracks">
+    <section class="section" id="section-tracks">
       <div class="section-header">
         <div class="section-title">Industry-specific tracks</div>
         <div class="section-sub">Applied throughout all modules — tagged on every session</div>
@@ -1068,7 +1068,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
     </section>
 
     <!-- MODULES -->
-    <section class="section" id="modules">
+    <section class="section" id="section-modules">
       <div class="section-header">
         <div class="section-title">Course modules</div>
         <div class="section-sub">5 modules · 28 sessions · 40 hours</div>
@@ -1092,7 +1092,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
     </section>
 
     <!-- CAPSTONE -->
-    <section class="section" id="capstone">
+    <section class="section" id="section-capstone">
       <div class="section-header">
         <div class="section-title">Capstone day</div>
         <div class="section-sub">Standalone — separate from all modules — 4 hours</div>
@@ -1131,7 +1131,7 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
     </section>
 
     <!-- GLOSSARY -->
-    <section class="section" id="glossary">
+    <section class="section" id="section-glossary">
       <div class="section-header">
         <div class="section-title">Course glossary</div>
         <div class="section-sub">52 terms · 7 categories · pre-module reference</div>
@@ -1248,7 +1248,28 @@ mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2p
 </footer>
 
 <script>
-const MODULES = [
+
+  function navScrollTo(id) {
+    console.log("HEre")
+    const el = document.getElementById(`section-${id}`);
+    if (!el) return;
+
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // const headerOffset = 56;
+    //
+    // const y =
+    //   el.getBoundingClientRect().top +
+    //   window.pageYOffset -
+    //   headerOffset;
+    //
+    // window.scrollTo({
+    //   top: y,
+    //   behavior: "smooth"
+    // });
+  }
+  
+
+  const MODULES = [
   {
     id:"m0",
     bg:"#E6F1FB", tc:"#0C447C",
@@ -1602,10 +1623,6 @@ function filterSessions(type, btn) {
   });
 }
 
-function scrollTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
 
 buildModules();
 
