@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills Assessment — AEO/GEO Course</title>
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f7f5f0;
+      color: #111;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      font-size: 13px;
+      color: #a32020;
+      margin-bottom: 16px;
+    }
+
+    .progress {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .question {
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .options label {
+      display: block;
+      padding: 8px 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+
+    .options input {
+      margin-right: 8px;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 10px 16px;
+      border: none;
+      background: #1a4fd6;
+      color: #fff;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0f33a0;
+    }
+
+    .result {
+      display: none;
+    }
+
+    .score {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .focus {
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Skills Assessment</h1>
+  <div class="desc">
+    15 questions · 30 minutes. Covers GSC literacy, on-page SEO, technical basics, and tools.
+  </div>
+
+  <div class="timer" id="timer">Time left: 30:00</div>
+  <div class="progress" id="progress"></div>
+
+  <div id="quiz"></div>
+
+  <button onclick="nextQuestion()">Next</button>
+
+  <div class="result" id="result">
+    <div class="score" id="score"></div>
+    <div class="focus" id="focus"></div>
+  </div>
+
+</div>
+
+<script>
+  const questions = [
+    {q:"What does GSC stand for?", options:["Google Search Console","Global Site Checker","Google SEO Control"], answer:0, tag:"GSC"},
+    {q:"What does a canonical tag do?", options:["Duplicates pages","Specifies preferred version","Blocks indexing"], answer:1, tag:"Technical"},
+    {q:"Which metric shows clicks in GSC?", options:["CTR","Sessions","Bounce rate"], answer:0, tag:"GSC"},
+    {q:"What is indexing?", options:["Ranking pages","Storing pages","Designing pages"], answer:1, tag:"Technical"},
+    {q:"What is a meta title?", options:["Page heading","Browser title","Image alt"], answer:1, tag:"SEO"},
+    {q:"Best URL structure?", options:["Short & descriptive","Long & keyword-heavy","Random"], answer:0, tag:"SEO"},
+    {q:"What is crawl budget?", options:["Server cost","Pages Google crawls","Keyword budget"], answer:1, tag:"Technical"},
+    {q:"Schema helps with?", options:["Ranking only","Rich results","Speed"], answer:1, tag:"Technical"},
+    {q:"What is CTR?", options:["Clicks / impressions","Traffic / time","Users / page"], answer:0, tag:"GSC"},
+    {q:"Which tool tracks backlinks?", options:["Ahrefs","GA4","GSC"], answer:0, tag:"Tools"},
+    {q:"GA4 measures?", options:["Search rankings","User behaviour","Backlinks"], answer:1, tag:"Tools"},
+    {q:"What is alt text?", options:["Image description","Title tag","URL"], answer:0, tag:"SEO"},
+    {q:"Keyword intent means?", options:["User goal","Page length","Link count"], answer:0, tag:"SEO"},
+    {q:"Robots.txt does?", options:["Blocks crawling","Improves UX","Adds schema"], answer:0, tag:"Technical"},
+    {q:"CMS means?", options:["Content Management System","Core Marketing Stack","Content Machine System"], answer:0, tag:"Tools"}
+  ];
+
+  let current = 0;
+  let score = 0;
+  let answers = [];
+
+  function loadQuestion() {
+    const q = questions[current];
+    document.getElementById("progress").innerText = `Question ${current+1} of 15`;
+
+    document.getElementById("quiz").innerHTML = `
+    <div class="question">${q.q}</div>
+    <div class="options">
+      ${q.options.map((opt,i)=>`
+        <label>
+          <input type="radio" name="opt" value="${i}">
+          ${opt}
+        </label>
+      `).join("")}
+    </div>
+  `;
+  }
+
+  function nextQuestion() {
+    const selected = document.querySelector('input[name="opt"]:checked');
+    if (!selected) return alert("Select an answer");
+
+    const val = parseInt(selected.value);
+    answers.push({tag:questions[current].tag, correct: val === questions[current].answer});
+
+    if (val === questions[current].answer) score++;
+
+    current++;
+
+    if (current < questions.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    document.getElementById("quiz").style.display = "none";
+    document.querySelector("button").style.display = "none";
+
+    const total = questions.length;
+    const percent = Math.round((score/total)*100);
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("score").innerText = `Score: ${score}/${total} (${percent}%)`;
+
+    let focus = {};
+
+    answers.forEach(a=>{
+      if(!a.correct){
+        focus[a.tag] = (focus[a.tag] || 0) + 1;
+      }
+    });
+
+    const weak = Object.keys(focus).sort((a,b)=>focus[b]-focus[a]);
+
+    document.getElementById("focus").innerText =
+      weak.length ? "Focus areas: " + weak.join(", ") : "Strong across all areas.";
+  }
+
+  loadQuestion();
+
+  /* TIMER */
+  let time = 1800;
+  const timerEl = document.getElementById("timer");
+
+  const timer = setInterval(()=>{
+    time--;
+    let m = Math.floor(time/60);
+    let s = time%60;
+    timerEl.innerText = `Time left: ${m}:${s.toString().padStart(2,'0')}`;
+
+    if(time <= 0){
+      clearInterval(timer);
+      showResult();
+    }
+  },1000);
+
+</script>
+
+</body>
+</html>
+```
