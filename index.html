@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEO & GEO Professional Certification — v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e0e0e;
+  --ink-soft: #3a3a3a;
+  --ink-mute: #6b6b6b;
+  --ink-faint: #a0a0a0;
+  --page: #f7f5f0;
+  --surface: #ffffff;
+  --rule: rgba(0,0,0,0.08);
+  --rule-med: rgba(0,0,0,0.14);
+  --accent: #1a4fd6;
+  --accent-light: #e8effe;
+  --accent-dark: #0f33a0;
+  --teal: #0b6e5a;
+  --teal-light: #e0f4ef;
+  --amber: #8a4d00;
+  --amber-light: #fef3e2;
+  --coral: #b03322;
+  --coral-light: #fdecea;
+  --green: #2d6a1f;
+  --green-light: #edf5e9;
+  --purple: #4a2d8f;
+  --purple-light: #eeebfc;
+  --gray-light: #f1efe8;
+  --red: #a32020;
+  --red-light: #fceaea;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--page);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--ink);
+  color: #fff;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 56px;
+}
+.header-logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-logo span { color: #6b9fff; font-style: italic; }
+.header-nav {
+  display: flex;
+  gap: 0;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.header-nav::-webkit-scrollbar { display: none; }
+.nav-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0 14px;
+  height: 56px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+  letter-spacing: 0.01em;
+  border-bottom: 2px solid transparent;
+}
+.nav-btn:hover { color: rgba(255,255,255,0.85); }
+.nav-btn.active { color: #fff; border-bottom-color: #6b9fff; }
+.header-badge {
+  font-size: 11px;
+  background: rgba(107,159,255,0.15);
+  color: #6b9fff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  color: #fff;
+  padding: 72px 2rem 60px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -80px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(26,79,214,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: 20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(11,110,90,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: #6b9fff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: #6b9fff;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-title em { color: #6b9fff; font-style: italic; }
+.hero-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+.hero-pill {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+}
+.hero-pill.accent { background: rgba(107,159,255,0.15); border-color: rgba(107,159,255,0.3); color: #6b9fff; }
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  max-width: 700px;
+}
+.stat-block {
+  background: rgba(255,255,255,0.03);
+  padding: 18px 20px;
+  text-align: center;
+}
+.stat-block:hover { background: rgba(255,255,255,0.06); }
+.stat-n {
+  font-family: var(--serif);
+  font-size: 32px;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-l {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
+}
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 2rem 80px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 800px) {
+  .main { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky;
+  top: 76px;
+}
+.sidebar-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  margin-bottom: 16px;
+}
+.sidebar-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 14px;
+}
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background 0.12s;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.sidebar-nav-item:hover { background: var(--gray-light); }
+.sidebar-nav-item.active { background: var(--accent-light); color: var(--accent); font-weight: 500; }
+.mod-dot {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.progress-bar-wrap { margin-bottom: 8px; }
+.progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--ink-mute); margin-bottom: 4px; }
+.progress-track { height: 4px; background: var(--gray-light); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 2px; transition: width 0.4s; }
+
+.filter-group { display: flex; flex-direction: column; gap: 6px; }
+.filter-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--rule);
+  background: none;
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+  transition: all 0.12s;
+  text-align: left;
+}
+.filter-chip:hover { background: var(--gray-light); border-color: var(--rule-med); }
+.filter-chip.on { font-weight: 500; }
+.chip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── SECTIONS ── */
+.section { margin-bottom: 48px; }
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.section-sub { font-size: 13px; color: var(--ink-mute); }
+
+/* ── ALERT BOXES ── */
+.alert {
+  border-radius: var(--r-lg);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.alert-content {}
+.alert-title { font-weight: 500; margin-bottom: 3px; }
+.alert.prereq { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 var(--r-lg) var(--r-lg) 0; }
+.alert.prereq .alert-title { color: var(--accent-dark); }
+.alert.prereq { color: #1a3a8f; }
+.alert.glossary { background: var(--purple-light); border-left: 3px solid var(--purple); border-radius: 0 var(--r-lg) var(--r-lg) 0; color: var(--purple); }
+.alert.glossary .alert-title { color: #2d1a6e; }
+
+/* ── FLAW FIXES ── */
+.flaw-fixes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.flaw-tag {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 12px;
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-md);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.flaw-tag::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* ── TOOL STACK ── */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.tool-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.tool-name { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.tool-use { font-size: 12px; color: var(--ink-mute); margin-bottom: 4px; }
+.tool-cost {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--teal);
+}
+
+/* ── INDUSTRY TRACKS ── */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.track-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-lg);
+  padding: 16px;
+}
+.track-name { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+.track-detail { font-size: 12px; color: var(--ink-mute); line-height: 1.5; }
+
+/* ── MODULES ── */
+.module {
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-xl);
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.module:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.module.expanded { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+.mod-header {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  user-select: none;
+}
+.mod-num-badge {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 500;
+  flex-shrink: 0;
+}
+.mod-header-content { flex: 1; min-width: 0; }
+.mod-title { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.mod-subtitle { font-size: 12px; color: var(--ink-mute); margin-bottom: 10px; }
+.mod-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.mod-pill {
+  font-size: 11px; font-weight: 500; padding: 3px 10px;
+  border-radius: 20px;
+}
+.mod-chevron {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gray-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 6px;
+  transition: transform 0.25s, background 0.15s;
+  font-size: 14px; color: var(--ink-mute);
+}
+.module.expanded .mod-chevron { transform: rotate(180deg); background: var(--accent-light); color: var(--accent); }
+
+.mod-body { display: none; border-top: 1px solid var(--rule); }
+.module.expanded .mod-body { display: block; }
+
+.objectives-section {
+  background: var(--gray-light);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.obj-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.obj-list { display: flex; flex-direction: column; gap: 7px; }
+.obj-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px; color: var(--ink-soft); line-height: 1.5;
+}
+.obj-check {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+.sessions-container { padding: 16px 24px; display: flex; flex-direction: column; gap: 8px; }
+
+/* ── SESSION CARDS ── */
+.session-card {
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.session-card[data-type="failure"] { border-color: rgba(163,32,32,0.2); }
+.session-card:hover { border-color: rgba(26,79,214,0.25); }
+.session-card[data-type="failure"]:hover { border-color: rgba(163,32,32,0.4); }
+
+.sess-header {
+  padding: 11px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background: var(--surface);
+}
+.sess-header:hover { background: #fdfdfd; }
+.sess-badge {
+  font-size: 10px; font-weight: 500; padding: 3px 9px;
+  border-radius: 20px; flex-shrink: 0; letter-spacing: 0.02em;
+}
+.sb-theory { background: var(--accent-light); color: var(--accent-dark); }
+.sb-lab { background: var(--teal-light); color: var(--teal); }
+.sb-case { background: var(--purple-light); color: var(--purple); }
+.sb-workshop { background: var(--amber-light); color: var(--amber); }
+.sb-failure { background: var(--red-light); color: var(--red); }
+.sb-ethics { background: var(--coral-light); color: var(--coral); }
+.sb-assessment { background: var(--green-light); color: var(--green); }
+
+.sess-name { font-size: 13px; font-weight: 500; color: var(--ink); flex: 1; }
+.sess-dur {
+  font-size: 11px; color: var(--ink-faint);
+  font-family: var(--mono); flex-shrink: 0;
+}
+.sess-chevron {
+  font-size: 13px; color: var(--ink-faint);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.session-card.open .sess-chevron { transform: rotate(180deg); }
+
+.sess-body {
+  display: none;
+  padding: 14px 16px;
+  border-top: 1px solid var(--rule);
+  background: #fefefe;
+}
+.session-card.open .sess-body { display: block; }
+.sess-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 10px; }
+.tags-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.tag {
+  font-size: 11px; padding: 2px 8px;
+  background: var(--gray-light); color: var(--ink-mute);
+  border-radius: var(--r-sm); border: 1px solid var(--rule-med);
+}
+.ind-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.ind-tag {
+  font-size: 10px; padding: 2px 8px;
+  background: var(--amber-light); color: var(--amber);
+  border-radius: var(--r-sm);
+  font-weight: 500;
+}
+.lo-box {
+  padding: 10px 14px;
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 12px; color: var(--accent-dark);
+  margin-bottom: 8px; line-height: 1.5;
+}
+.lo-box strong { color: var(--accent-dark); font-weight: 500; }
+.del-box {
+  padding: 10px 14px;
+  background: var(--teal-light);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 12px; color: var(--teal);
+  line-height: 1.5;
+}
+.del-box strong { font-weight: 500; color: #054d3c; }
+
+/* ── ASSESSMENT STRIP ── */
+.assessment-strip {
+  margin: 8px 24px 16px;
+  background: var(--green-light);
+  border: 1px solid rgba(45,106,31,0.2);
+  border-radius: var(--r-lg);
+  padding: 14px 18px;
+}
+.as-title {
+  font-size: 12px; font-weight: 500; color: var(--green);
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.as-icon { font-size: 15px; }
+.as-list { display: flex; flex-direction: column; gap: 5px; }
+.as-item {
+  display: flex; gap: 8px; align-items: flex-start;
+  font-size: 12px; color: #2d5a1e; line-height: 1.5;
+}
+.as-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 6px; }
+
+/* ── CAPSTONE ── */
+.capstone-section {
+  background: var(--ink);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  color: #fff;
+  margin-top: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.capstone-section::before {
+  content: '';
+  position: absolute; top: -80px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(11,110,90,0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cap-eyebrow {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 10px;
+}
+.cap-title {
+  font-family: var(--serif); font-size: 26px;
+  font-weight: 400; letter-spacing: -0.01em;
+  margin-bottom: 8px; line-height: 1.2;
+}
+.cap-title em { color: #6dffd0; font-style: italic; }
+.cap-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.65; margin-bottom: 24px; max-width: 560px; }
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+.cap-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-lg);
+  padding: 14px 16px;
+  transition: background 0.15s;
+}
+.cap-card:hover { background: rgba(255,255,255,0.08); }
+.cap-card-title { font-size: 12px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+.cap-card-desc { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+/* ── CONTROLS ── */
+.controls-row {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+}
+.ctrl-btn {
+  font-family: var(--sans);
+  font-size: 12px; font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--rule-med);
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.ctrl-btn:hover { background: var(--gray-light); border-color: var(--rule-med); }
+.ctrl-btn.type-btn.on { font-weight: 500; border-width: 1.5px; }
+.ctrl-btn.type-btn[data-type="all"].on { background: var(--accent-light); color: var(--accent); border-color: var(--accent); }
+.ctrl-btn.type-btn[data-type="lab"].on { background: var(--teal-light); color: var(--teal); border-color: var(--teal); }
+.ctrl-btn.type-btn[data-type="failure"].on { background: var(--red-light); color: var(--red); border-color: var(--red); }
+.ctrl-btn.type-btn[data-type="assessment"].on { background: var(--green-light); color: var(--green); border-color: var(--green); }
+.ctrl-btn.type-btn[data-type="theory"].on { background: var(--accent-light); color: var(--accent-dark); border-color: var(--accent); }
+.ctrl-btn.type-btn[data-type="workshop"].on { background: var(--amber-light); color: var(--amber); border-color: #d4a060; }
+
+.expand-collapse-row { display: flex; gap: 8px; margin-bottom: 24px; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  padding: 28px 2rem;
+  font-size: 12px;
+}
+footer span { color: rgba(255,255,255,0.6); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.module { animation: fadeUp 0.4s ease both; }
+.module:nth-child(1) { animation-delay: 0.05s; }
+.module:nth-child(2) { animation-delay: 0.1s; }
+.module:nth-child(3) { animation-delay: 0.15s; }
+.module:nth-child(4) { animation-delay: 0.2s; }
+.module:nth-child(5) { animation-delay: 0.25s; }
+
+/* ── HIDDEN UTIL ── */
+.hidden { display: none !important; }
+
+/* ── GLOSSARY SECTION ── */
+.glossary-hero {
+  background: var(--ink);
+  border-radius: var(--r-xl);
+  padding: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.glossary-hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -40px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(26,79,214,0.2) 0%, transparent 65%);
+  pointer-events: none;
+}
+.glossary-hero::after {
+  content: 'GLOSSARY';
+  position: absolute; right: 20px; bottom: -10px;
+  font-family: var(--serif);
+  font-size: 72px; color: rgba(255,255,255,0.03);
+  letter-spacing: -0.03em; pointer-events: none; user-select: none;
+}
+.gl-eyebrow {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 10px;
+}
+.gl-title {
+  font-family: var(--serif); font-size: 26px;
+  font-weight: 400; letter-spacing: -0.01em;
+  color: #fff; margin-bottom: 8px; position: relative; z-index: 1;
+}
+.gl-title em { color: #6b9fff; font-style: italic; }
+.gl-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 20px; max-width: 480px; position: relative; z-index: 1; }
+.gl-meta { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; }
+.gl-stat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--r-md);
+  padding: 8px 16px; text-align: center;
+}
+.gl-stat-n { font-family: var(--serif); font-size: 22px; color: #fff; }
+.gl-stat-l { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+
+/* glossary search */
+.gl-controls {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 20px; align-items: center;
+}
+.gl-search-wrap { position: relative; flex: 1; min-width: 220px; max-width: 380px; }
+.gl-search {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-lg);
+  padding: 9px 14px 9px 36px;
+  font-family: var(--sans); font-size: 13px;
+  color: var(--ink); outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.gl-search::placeholder { color: var(--ink-faint); }
+.gl-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,79,214,0.1); }
+.gl-search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--ink-faint); font-size: 14px; pointer-events: none; }
+.gl-count-label { font-size: 12px; color: var(--ink-mute); font-family: var(--mono); }
+.gl-count-label span { color: var(--accent); font-weight: 500; }
+
+/* cat filter pills */
+.gl-cat-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.gl-cat-pill {
+  font-size: 12px; font-weight: 500; padding: 5px 14px;
+  border-radius: 20px; border: 1px solid var(--rule-med);
+  background: var(--surface); color: var(--ink-soft);
+  cursor: pointer; transition: all 0.15s; font-family: var(--sans);
+}
+.gl-cat-pill:hover { background: var(--gray-light); }
+.gl-cat-pill.active { color: #fff; border-color: transparent; }
+
+/* category section */
+.gl-cat-section { margin-bottom: 36px; }
+.gl-cat-section.gl-hidden { display: none; }
+.gl-cat-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 14px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule);
+}
+.gl-cat-stripe { width: 3px; height: 24px; border-radius: 2px; flex-shrink: 0; }
+.gl-cat-name { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--ink); }
+.gl-cat-count {
+  font-size: 11px; font-family: var(--mono);
+  color: var(--ink-mute); background: var(--gray-light);
+  padding: 2px 8px; border-radius: 4px; border: 1px solid var(--rule-med);
+}
+
+/* term cards grid */
+.gl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+
+/* term card */
+.gl-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-med);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.gl-card:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+.gl-card.gl-open { border-color: rgba(26,79,214,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+.gl-card-top {
+  padding: 13px 16px 11px;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.gl-icon {
+  width: 34px; height: 34px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 12px;
+  flex-shrink: 0;
+}
+.gl-card-head { flex: 1; min-width: 0; }
+.gl-term-name { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+.gl-term-full { font-size: 11px; color: var(--ink-mute); margin-bottom: 4px; font-style: italic; }
+.gl-type-row { display: flex; align-items: center; gap: 6px; }
+.gl-type-badge {
+  font-size: 10px; font-weight: 500; padding: 2px 7px;
+  border-radius: 4px; letter-spacing: 0.03em;
+}
+.gl-toggle-btn {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--gray-light); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 11px; color: var(--ink-mute);
+  flex-shrink: 0; transition: transform 0.2s, background 0.15s;
+}
+.gl-card.gl-open .gl-toggle-btn { transform: rotate(180deg); background: var(--accent-light); color: var(--accent); }
+
+.gl-short {
+  padding: 0 16px 12px 60px;
+  font-size: 12px; color: var(--ink-soft); line-height: 1.6;
+}
+
+.gl-body {
+  display: none;
+  border-top: 1px solid var(--rule);
+  background: #fcfbf8;
+}
+.gl-card.gl-open .gl-body { display: block; }
+
+.gl-full-def {
+  padding: 14px 16px;
+  font-size: 13px; color: var(--ink-soft); line-height: 1.75;
+}
+.gl-full-def p { margin-bottom: 9px; }
+.gl-full-def p:last-child { margin-bottom: 0; }
+.gl-full-def strong { color: var(--ink); font-weight: 500; }
+.gl-full-def em { color: var(--accent); font-style: italic; }
+.gl-full-def code {
+  font-family: var(--mono); font-size: 11px;
+  background: var(--gray-light); padding: 1px 5px;
+  border-radius: 3px; color: var(--ink-soft);
+}
+
+.gl-vs-seo {
+  margin: 0 16px 12px;
+  padding: 9px 12px;
+  background: var(--amber-light);
+  border-left: 2px solid var(--amber);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 12px; color: var(--amber); line-height: 1.5;
+}
+.gl-vs-seo strong { font-weight: 500; color: #6a3800; }
+
+.gl-course-note {
+  margin: 0 16px 12px;
+  padding: 9px 12px;
+  background: var(--accent-light);
+  border-left: 2px solid var(--accent);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 12px; color: var(--accent-dark); line-height: 1.5;
+}
+.gl-course-note strong { font-weight: 500; }
+
+.gl-tags { padding: 0 16px 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+.gl-tag {
+  font-size: 10px; padding: 2px 7px;
+  background: var(--gray-light); color: var(--ink-mute);
+  border-radius: 3px; border: 1px solid var(--rule-med);
+  font-family: var(--mono);
+}
+.gl-related { padding: 0 16px 12px; font-size: 12px; color: var(--ink-mute); }
+.gl-rel-link { color: var(--accent); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.gl-rel-link:hover { color: var(--ink); }
+
+.gl-no-results {
+  display: none; text-align: center;
+  padding: 48px 20px; color: var(--ink-mute);
+}
+.gl-no-results.show { display: block; }
+
+mark { background: rgba(26,79,214,0.15); color: var(--accent); border-radius: 2px; padding: 0 1px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-logo">AEO <span>&</span> GEO</div>
+    <nav class="header-nav" id="headerNav">
+      <button class="nav-btn active" onclick="scrollTo('overview')">Overview</button>
+      <button class="nav-btn" onclick="scrollTo('prereq')">Pre-course</button>
+      <button class="nav-btn" onclick="scrollTo('tools')">Toolstack</button>
+      <button class="nav-btn" onclick="scrollTo('tracks')">Tracks</button>
+      <button class="nav-btn" onclick="scrollTo('modules')">Modules</button>
+      <button class="nav-btn" onclick="scrollTo('capstone')">Capstone</button>
+      <button class="nav-btn" onclick="scrollTo('glossary')">Glossary</button>
+    </nav>
+    <div class="header-badge">v2 — Rebuilt</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Professional Certification Course</div>
+    <h1 class="hero-title">Answer Engine &<br><em>Generative Engine</em><br>Optimization</h1>
+    <p class="hero-desc">A fully rebuilt professional course for marketing managers with SEO foundations. Every session has learning objectives, every module has an assessment, and every module has a failure case study.</p>
+    <div class="hero-pills">
+      <span class="hero-pill accent">40 hours structured</span>
+      <span class="hero-pill">5 modules + capstone</span>
+      <span class="hero-pill">28 sessions</span>
+      <span class="hero-pill">8 lab sessions</span>
+      <span class="hero-pill">5 failure case studies</span>
+      <span class="hero-pill">4 industry tracks</span>
+      <span class="hero-pill">Bloom's-aligned objectives</span>
+      <span class="hero-pill">4 module assessments</span>
+    </div>
+    <div class="stats-strip">
+      <div class="stat-block">
+        <div class="stat-n">5</div>
+        <div class="stat-l">Core modules</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">28</div>
+        <div class="stat-l">Sessions</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">8</div>
+        <div class="stat-l">Lab sessions</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">5</div>
+        <div class="stat-l">Failure cases</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-n">40h</div>
+        <div class="stat-l">Total time</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<div class="main">
+  <div class="content-col">
+
+
+
+    <!-- PRE-COURSE -->
+    <section class="section" id="prereq">
+      <div class="section-header">
+        <div class="section-title">Pre-course requirements</div>
+        <div class="section-sub">Mandatory before Module 0</div>
+      </div>
+      <div class="alert prereq">
+        <div class="alert-icon">📋</div>
+        <div class="alert-content">
+          <div class="alert-title">Skills assessment — 15 questions, 30 minutes</div>
+          Learners complete a mandatory diagnostic covering GSC literacy, on-page SEO, technical comfort, and tool familiarity. Results generate a personalised "focus areas" report. Minimum baseline required: ability to interpret GSC data, understanding of canonical tags, CMS admin access. Learners below threshold receive a curated 30-minute pre-reading list before proceeding.
+        </div>
+      </div>
+      <div class="alert glossary">
+        <div class="alert-icon">📖</div>
+        <div class="alert-content">
+          <div class="alert-title">Course glossary — pre-module resource</div>
+          All key terms defined on first use. Distinguishes industry-standard terms from course-specific frameworks. Covers: AEO, GEO, SoMR, Share of Model Response, RAG, Entity, Schema, Knowledge Graph, Citation Context Quality Score, Query Coverage Score, and all course-specific frameworks including PEI method.
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:8px;">
+        <div class="flaw-tag">Google Search Console literacy</div>
+        <div class="flaw-tag">On-page SEO fundamentals</div>
+        <div class="flaw-tag">CMS admin access</div>
+        <div class="flaw-tag">Basic HTML reading ability</div>
+        <div class="flaw-tag">Keyword research experience</div>
+      </div>
+    </section>
+
+    <!-- TOOLSTACK -->
+    <section class="section" id="tools">
+      <div class="section-header">
+        <div class="section-title">Recommended toolstack</div>
+        <div class="section-sub">Covered in Module 0, Session 3 — all 8 tools configured in lab</div>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card">
+          <div class="tool-name">Profound / Otterly.ai</div>
+          <div class="tool-use">AI visibility monitoring</div>
+          <div class="tool-cost">Paid — covered in lab</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Screaming Frog</div>
+          <div class="tool-use">Technical site crawl</div>
+          <div class="tool-cost">Free up to 500 URLs</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Google Rich Results Test</div>
+          <div class="tool-use">Schema validation</div>
+          <div class="tool-cost">Free</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Brand24</div>
+          <div class="tool-use">Brand mention tracking</div>
+          <div class="tool-cost">Paid — team plan</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Ahrefs / Semrush</div>
+          <div class="tool-use">Authority & backlinks</div>
+          <div class="tool-cost">Existing sub assumed</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Google Search Console</div>
+          <div class="tool-use">AI Overviews data</div>
+          <div class="tool-cost">Free</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Perplexity / ChatGPT</div>
+          <div class="tool-use">Manual prompt testing</div>
+          <div class="tool-cost">Free / Plus tier</div>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">GA4</div>
+          <div class="tool-use">AI traffic attribution</div>
+          <div class="tool-cost">Free</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRY TRACKS -->
+    <section class="section" id="tracks">
+      <div class="section-header">
+        <div class="section-title">Industry-specific tracks</div>
+        <div class="section-sub">Applied throughout all modules — tagged on every session</div>
+      </div>
+      <div class="track-grid">
+        <div class="track-card" style="border-top:3px solid var(--accent);">
+          <div class="track-name" style="color:var(--accent);">B2B SaaS</div>
+          <div class="track-detail">Product schema, comparison queries, category ownership, LinkedIn authority signals, thought leadership citation</div>
+        </div>
+        <div class="track-card" style="border-top:3px solid var(--teal);">
+          <div class="track-name" style="color:var(--teal);">E-commerce</div>
+          <div class="track-detail">Product/review schema, shopping queries, brand vs generic queries, merchant entity, multi-modal product images</div>
+        </div>
+        <div class="track-card" style="border-top:3px solid var(--amber);">
+          <div class="track-name" style="color:var(--amber);">Local / services</div>
+          <div class="track-detail">LocalBusiness schema, NAP consistency, review signals, geo-modified queries, Google Business Profile entity</div>
+        </div>
+        <div class="track-card" style="border-top:3px solid var(--coral);">
+          <div class="track-name" style="color:var(--coral);">Media / publishing</div>
+          <div class="track-detail">Article/NewsArticle schema, author entity, paywalls and AI crawlers, topical authority, quote sourcing</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="section" id="modules">
+      <div class="section-header">
+        <div class="section-title">Course modules</div>
+        <div class="section-sub">5 modules · 28 sessions · 40 hours</div>
+      </div>
+
+      <div class="controls-row">
+        <span style="font-size:12px;color:var(--ink-mute);padding:7px 4px;align-self:center;">Filter:</span>
+        <button class="ctrl-btn type-btn on" data-type="all" onclick="filterSessions('all',this)">All sessions</button>
+        <button class="ctrl-btn type-btn" data-type="lab" onclick="filterSessions('lab',this)">Labs</button>
+        <button class="ctrl-btn type-btn" data-type="failure" onclick="filterSessions('failure',this)">Failure cases</button>
+        <button class="ctrl-btn type-btn" data-type="assessment" onclick="filterSessions('assessment',this)">Assessments</button>
+        <button class="ctrl-btn type-btn" data-type="theory" onclick="filterSessions('theory',this)">Theory</button>
+        <button class="ctrl-btn type-btn" data-type="workshop" onclick="filterSessions('workshop',this)">Workshops</button>
+      </div>
+      <div class="expand-collapse-row">
+        <button class="ctrl-btn" onclick="toggleAllModules(true)">Expand all ▾</button>
+        <button class="ctrl-btn" onclick="toggleAllModules(false)">Collapse all ▴</button>
+      </div>
+
+      <div id="modules-container"></div>
+    </section>
+
+    <!-- CAPSTONE -->
+    <section class="section" id="capstone">
+      <div class="section-header">
+        <div class="section-title">Capstone day</div>
+        <div class="section-sub">Standalone — separate from all modules — 4 hours</div>
+      </div>
+      <div class="capstone-section">
+        <div class="cap-eyebrow">Final assessment · Half-day session</div>
+        <div class="cap-title">Full AEO/GEO strategy<br><em>presentation & peer review</em></div>
+        <p class="cap-desc">The capstone is a dedicated half-day, not a module session. Learners present a complete AEO/GEO audit and 6-month strategy for their own site. Peer panel review with a published rubric. Grading criteria shared with every learner before the day.</p>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-card-title">Part 1 — Full site audit (60 min)</div>
+            <div class="cap-card-desc">Technical readiness, content quality, authority signals, current SoMR baseline</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-card-title">Part 2 — Strategy presentation (45 min)</div>
+            <div class="cap-card-desc">6-month roadmap, prioritised fixes, resource requirements, KPI targets</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-card-title">Part 3 — Peer panel Q&A (30 min)</div>
+            <div class="cap-card-desc">Structured peer review using provided rubric. Instructor facilitates</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-card-title">Part 4 — Executive summary (45 min)</div>
+            <div class="cap-card-desc">One-page brief for CMO/board. Justifies AEO investment in business language</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-card-title">Grading rubric</div>
+            <div class="cap-card-desc">Pass: solid audit + coherent roadmap. Merit: original insight + industry context. Distinction: measurable hypothesis + exec-quality presentation</div>
+          </div>
+          <div class="cap-card">
+            <div class="cap-card-title">Facilitator guide</div>
+            <div class="cap-card-desc">Timing guide, common stumbling blocks, intervention cues, and debrief structure provided in separate appendix</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GLOSSARY -->
+    <section class="section" id="glossary">
+      <div class="section-header">
+        <div class="section-title">Course glossary</div>
+        <div class="section-sub">52 terms · 7 categories · pre-module reference</div>
+      </div>
+
+      <div class="glossary-hero">
+        <div class="gl-eyebrow">Complete reference · Pre-module resource</div>
+        <div class="gl-title">Every term, <em>precisely defined</em></div>
+        <p class="gl-desc">All 52 key terms used in the course — with full definitions, SEO contrasts, course context notes, and cross-references between related terms.</p>
+        <div class="gl-meta">
+          <div class="gl-stat"><div class="gl-stat-n">52</div><div class="gl-stat-l">Terms total</div></div>
+          <div class="gl-stat"><div class="gl-stat-n">7</div><div class="gl-stat-l">Categories</div></div>
+          <div class="gl-stat"><div class="gl-stat-n">28</div><div class="gl-stat-l">SEO contrasts</div></div>
+          <div class="gl-stat"><div class="gl-stat-n">52</div><div class="gl-stat-l">Course notes</div></div>
+        </div>
+      </div>
+
+      <div class="gl-controls">
+        <div class="gl-search-wrap">
+          <span class="gl-search-icon">⌕</span>
+          <input type="text" class="gl-search" id="glSearch" placeholder="Search any term, acronym or concept…" autocomplete="off">
+        </div>
+        <div class="gl-count-label"><span id="glVisible">52</span> / 52 terms shown</div>
+      </div>
+
+      <div class="gl-cat-pills" id="glCatPills">
+        <button class="gl-cat-pill active" data-cat="all" onclick="glFilterCat('all',this)" style="background:var(--accent);border-color:var(--accent);">All 52</button>
+        <button class="gl-cat-pill" data-cat="core" onclick="glFilterCat('core',this)">Core concepts</button>
+        <button class="gl-cat-pill" data-cat="technical" onclick="glFilterCat('technical',this)">Technical</button>
+        <button class="gl-cat-pill" data-cat="content" onclick="glFilterCat('content',this)">Content & strategy</button>
+        <button class="gl-cat-pill" data-cat="measurement" onclick="glFilterCat('measurement',this)">Measurement</button>
+        <button class="gl-cat-pill" data-cat="frameworks" onclick="glFilterCat('frameworks',this)">Course frameworks</button>
+        <button class="gl-cat-pill" data-cat="tools" onclick="glFilterCat('tools',this)">Tools & platforms</button>
+        <button class="gl-cat-pill" data-cat="ethics" onclick="glFilterCat('ethics',this)">Ethics & legal</button>
+      </div>
+
+      <div id="glNoResults" class="gl-no-results">No terms match your search.</div>
+      <div id="glBody"></div>
+    </section>
+
+  </div><!-- /content-col -->
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-title">Jump to module</div>
+      <a href="#module-m0" class="sidebar-nav-item" id="sn-m0">
+        <div class="mod-dot" style="background:#E6F1FB;color:#0C447C;">00</div>
+        Orientation & ethics
+      </a>
+      <a href="#module-m1" class="sidebar-nav-item" id="sn-m1">
+        <div class="mod-dot" style="background:#EEEDFE;color:#3C3489;">01</div>
+        How LLMs process content
+      </a>
+      <a href="#module-m2" class="sidebar-nav-item" id="sn-m2">
+        <div class="mod-dot" style="background:#E1F5EE;color:#085041;">02</div>
+        Technical infrastructure
+      </a>
+      <a href="#module-m3" class="sidebar-nav-item" id="sn-m3">
+        <div class="mod-dot" style="background:#FAEEDA;color:#633806;">03</div>
+        Content for GEO
+      </a>
+      <a href="#module-m4" class="sidebar-nav-item" id="sn-m4">
+        <div class="mod-dot" style="background:#FAECE7;color:#712B13;">04</div>
+        Performance & measurement
+      </a>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Hours by module</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Module 0</span><span>6 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:60%;background:#378ADD;"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Module 1</span><span>7 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:70%;background:#7F77DD;"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Module 2</span><span>9 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:90%;background:#1D9E75;"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Module 3</span><span>9 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:90%;background:#BA7517;"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Module 4</span><span>9 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:90%;background:#D85A30;"></div></div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-label"><span>Capstone</span><span>4 hrs</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:40%;background:#888780;"></div></div>
+      </div>
+    </div>
+    <div class="sidebar-card">
+      <div class="sidebar-title">Session types</div>
+      <div class="filter-group">
+        <button class="filter-chip" onclick="filterSessions('theory',null)"><div class="chip-dot" style="background:var(--accent);"></div>Theory sessions</button>
+        <button class="filter-chip" onclick="filterSessions('lab',null)"><div class="chip-dot" style="background:var(--teal);"></div>Practical labs</button>
+        <button class="filter-chip" onclick="filterSessions('case',null)"><div class="chip-dot" style="background:var(--purple);"></div>Case studies</button>
+        <button class="filter-chip" onclick="filterSessions('workshop',null)"><div class="chip-dot" style="background:var(--amber);"></div>Workshops</button>
+        <button class="filter-chip" onclick="filterSessions('failure',null)"><div class="chip-dot" style="background:var(--red);"></div>Failure cases</button>
+        <button class="filter-chip" onclick="filterSessions('ethics',null)"><div class="chip-dot" style="background:var(--coral);"></div>Ethics & legal</button>
+        <button class="filter-chip" onclick="filterSessions('assessment',null)"><div class="chip-dot" style="background:var(--green);"></div>Assessments</button>
+        <button class="filter-chip" onclick="filterSessions('all',null)"><div class="chip-dot" style="background:var(--ink-mute);"></div>Show all</button>
+      </div>
+    </div>
+  </aside>
+
+</div><!-- /main -->
+
+<footer>
+  <span>AEO & GEO Professional Certification — v2</span> &nbsp;·&nbsp; Built for marketing managers with SEO foundations &nbsp;·&nbsp; 40 hours · 5 modules · 28 sessions
+</footer>
+
+<script>
+const MODULES = [
+  {
+    id:"m0",
+    bg:"#E6F1FB", tc:"#0C447C",
+    num:"00",
+    title:"Module 0 — Orientation, toolstack & ethics",
+    subtitle:"Pre-course skills check · tool setup · ethical and legal framework · glossary",
+    hours:"6 hrs", count:"4 sessions",
+    objectives:[
+      "Assess your own AEO/GEO knowledge baseline and identify personal learning priorities",
+      "Configure and verify access to all 8 required course tools before Module 1",
+      "Distinguish AEO from GEO precisely and apply the course glossary to real examples",
+      "Evaluate the ethical and legal risks of AEO practice and identify which apply to your organisation"
+    ],
+    sessions:[
+      {type:"theory",label:"Theory",name:"Precise definitions: AEO vs GEO and the search paradigm shift",dur:"75 min",
+        desc:"Define AEO (optimising for direct answer extraction from AI) vs GEO (optimising for citation in generative outputs) with precision. Trace the shift from PageRank crawlers to LLM-based answer synthesis. Establish exactly what 'good SEO knowledge' means as a course baseline.",
+        tags:["AEO defined","GEO defined","LLM vs crawler","Share of Model Response defined","Zero-click economics"],
+        lo:"Learners will precisely distinguish AEO from GEO and explain the mechanism by which each affects search visibility.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"assessment",label:"Assessment",name:"Pre-course diagnostic: 15-question skills baseline",dur:"30 min",
+        desc:"Mandatory 15-question diagnostic covering GSC literacy, on-page SEO, technical comfort, and tool familiarity. Auto-generates a personalised 'focus areas' report. Learners who fall below threshold on any section receive a curated 30-minute pre-reading list before proceeding.",
+        tags:["Bloom's: Remember / Understand","Scenario-based questions","Personalised output","Gap identification"],
+        lo:"Establishes each learner's baseline and surfaces prerequisite gaps before they affect Module 1.",
+        del:"Personal skills gap report + curated pre-reading list", industries:[]},
+      {type:"lab",label:"Lab",name:"Tool setup and verification: all 8 tools configured",dur:"90 min",
+        desc:"Hands-on setup session. Every learner leaves with all 8 tools installed, configured, and verified. Covers GSC AI Overviews filter, Screaming Frog crawl setup, Brand24 alert configuration, Perplexity and ChatGPT prompt testing environment, Profound/Otterly.ai trial, GA4 channel grouping for AI referrals, and Schema Markup Validator. Covers free alternatives for every paid tool.",
+        tags:["GSC AI Overviews filter","Screaming Frog config","Brand24 alerts","Profound free trial","GA4 AI channel group","Free-tier alternatives"],
+        lo:"Learners will configure and verify all 8 course tools with no dependency on instructor support from Module 1 onwards.",
+        del:"Tool setup verification checklist — signed off before Module 1", industries:["B2B","E-com","Local","Media"]},
+      {type:"ethics",label:"Ethics & Legal",name:"Ethical AEO, brand safety and the regulatory horizon",dur:"75 min",
+        desc:"Covers: AI hallucination of your brand (what to do when AI invents false facts about you), robots.txt opt-out for AI bots (GPTBot, ClaudeBot, PerplexityBot), copyright implications of AI training on your content, EU AI Act publisher obligations, and ethical over-optimisation risks. Includes failure case: a healthcare brand that suffered AI-hallucinated medical misinformation and the reputational damage it caused.",
+        tags:["AI hallucination response","GPTBot / ClaudeBot opt-out","EU AI Act publishers","Copyright & LLM training","Over-optimisation risks","Brand safety protocols"],
+        lo:"Learners will identify the top 3 ethical and legal risks relevant to their organisation and draft a brand safety response protocol.",
+        del:"Brand safety protocol template + AI bot opt-out implementation guide", industries:["B2B","E-com","Local","Media"], failure:true}
+    ],
+    assessment:{
+      title:"Module 0 assessment quiz — 5 scenario questions",
+      items:["Identify which AEO risk applies to a given scenario","Select correct robots.txt directive for AI bot exclusion","Match glossary terms to definitions","Diagnose an ethical AEO violation from a description","Rank tools by appropriateness for a given task"]
+    }
+  },
+  {
+    id:"m1",
+    bg:"#EEEDFE", tc:"#3C3489",
+    num:"01",
+    title:"Module 1 — How LLMs process and rank content",
+    subtitle:"RAG architecture · LLM trust signals · Knowledge Graph · E-E-A-T as AI signal",
+    hours:"7 hrs", count:"5 sessions",
+    objectives:[
+      "Explain how Retrieval-Augmented Generation (RAG) differs from static LLM training and why it matters for content strategy",
+      "Map the E-E-A-T framework onto LLM trust signal equivalents with specific examples",
+      "Analyse a competitor's content and identify which signals are driving their AI citation rate",
+      "Interpret the GEO research paper's 7 content interventions and their measured citation lift percentages"
+    ],
+    sessions:[
+      {type:"theory",label:"Theory",name:"How LLMs retrieve, weight, and synthesise content",dur:"80 min",
+        desc:"Deep technical explainer tailored for marketing managers — no ML background assumed. Covers RAG architecture, why training data vs live retrieval matters, how attention mechanisms weight authority signals, and what this means for content decisions. Uses the analogy of a very well-read researcher vs a search engine indexer to ground abstract concepts.",
+        tags:["RAG explained for marketers","Training cutoff vs live retrieval","Attention mechanism simplified","Why freshness signals matter","Token budget implications"],
+        lo:"Learners will explain RAG to a non-technical colleague and identify 3 content decisions it should change.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"The GEO research paper: data, methodology, and implications",dur:"75 min",
+        desc:"Full unpacking of the Princeton/Georgia Tech GEO paper (2024). Walk through the actual research methodology, which query types were tested, the full table of 7 content interventions and their measured citation lift (statistics +40%, quotes from experts +30%, fluency improvements +15%). Learners run the same tests on their own content using the provided testing protocol.",
+        tags:["7 GEO interventions with lift %","Princeton/Georgia Tech methodology","Statistics as citation driver","Expert quotes as citation driver","Running your own GEO tests"],
+        lo:"Learners will apply all 7 GEO interventions to a piece of their own content and measure citation rate change across 3 AI engines.",
+        del:"GEO intervention test results table — your content vs control", industries:["B2B","Media"]},
+      {type:"case",label:"Case Study",name:"Success case: HubSpot's definitional content architecture",dur:"60 min",
+        desc:"Structured audit of HubSpot's content library — why their definitional 'what is X' articles dominate AI citations in the marketing category. Deconstruct their content template, schema usage, internal linking strategy, and author entity signals.",
+        tags:["Definitional content model","Author entity signals","Topic cluster architecture","Citation rate benchmarks"],
+        lo:null, del:"Definitional content audit template for your category", industries:["B2B","Media"]},
+      {type:"failure",label:"Failure Case",name:"Failure case: the over-optimised news site that got ignored",dur:"45 min",
+        desc:"A major regional news publisher implemented aggressive AEO tactics — FAQPage schema on every article, heavy keyword density in answer-formatted paragraphs, daily freshness pings. Citation rate didn't increase. AI engines actually de-prioritised the site after 3 months. Post-mortem: over-optimisation signals, lack of genuine authority, and thin unique perspective.",
+        tags:["Over-optimisation failure","Thin content + schema = no lift","Genuine authority requirement","AI engine trust penalties","Post-mortem framework"],
+        lo:"Learners will diagnose over-optimisation risk in their own content strategy.",
+        del:null, industries:["Media","B2B"], failure:true},
+      {type:"lab",label:"Lab",name:"Lab: Competitor AI citation analysis — your market landscape",dur:"90 min",
+        desc:"Using Profound, manual Perplexity testing, and the provided 20-query testing protocol, map which competitors in your space are being cited by AI engines, for which queries, and in what context. Build a citation landscape map that identifies your biggest opportunities.",
+        tags:["20-query testing protocol","Perplexity prompt methodology","Profound competitor tracking","Citation landscape map","Opportunity identification"],
+        lo:"Learners will produce a citation landscape map with a ranked list of their top 5 citation opportunities.",
+        del:"Citation landscape map + top 5 opportunity list", industries:["B2B","E-com","Local","Media"]}
+    ],
+    assessment:{
+      title:"Module 1 assessment quiz — 5 scenario questions",
+      items:["Explain why a RAG-based engine would cite source A over source B","Identify which GEO intervention to apply to a given piece of content","Diagnose why a competitor's content is being cited more than yours","Match E-E-A-T signals to their LLM trust equivalents","Select the right testing approach for a given query type"]
+    }
+  },
+  {
+    id:"m2",
+    bg:"#E1F5EE", tc:"#085041",
+    num:"02",
+    title:"Module 2 — Technical infrastructure for answerability",
+    subtitle:"Schema markup · entity building · site architecture · AI crawlability",
+    hours:"9 hrs", count:"7 sessions",
+    objectives:[
+      "Implement FAQPage, HowTo, Organization, and Article schema on a live page without validation errors",
+      "Conduct a full technical AEO readiness audit and produce a prioritised fix list",
+      "Build an entity presence strategy covering Wikipedia, Wikidata, Google Knowledge Panel, and press mentions",
+      "Configure robots.txt to selectively allow or block AI crawlers at the page level"
+    ],
+    sessions:[
+      {type:"theory",label:"Theory",name:"Structured data — the semantic layer AI engines rely on",dur:"75 min",
+        desc:"Full Schema.org taxonomy for marketing teams. JSON-LD vs Microdata trade-offs. How entity disambiguation works and why it matters for brand safety. Which schema types have the highest citation correlation across B2B, e-commerce, local, and media verticals — with industry-specific guidance for each track.",
+        tags:["Schema.org hierarchy","JSON-LD vs Microdata","Entity disambiguation","FAQPage","HowTo","Organization","Product","NewsArticle"],
+        lo:"Learners will select the correct schema type for 5 different page types without looking up documentation.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"lab",label:"Lab",name:"Lab: Schema implementation — live pages, real errors",dur:"100 min",
+        desc:"Step-by-step implementation across all 4 industry tracks. Using Google's Rich Results Test and Schema Markup Validator, implement and debug schema on real pages. Covers WordPress (Yoast/RankMath), Webflow custom code injection, Shopify (liquid template), and raw HTML. Each learner implements on their own site.",
+        tags:["JSON-LD templates for 6 schema types","WordPress / Webflow / Shopify","Validation and error fixing","Priority page selection","Industry-specific examples"],
+        lo:"Learners will implement valid, error-free schema on at least 3 pages of their own site.",
+        del:"Schema implementation roadmap with priority ranking + validation screenshots", industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"Knowledge Graph and entity building strategy",dur:"70 min",
+        desc:"How Google's Knowledge Graph and Bing Entity Store feed AI answer engines. Covers the full entity building playbook: Wikipedia article strategy, Wikidata entity creation, Google Knowledge Panel acquisition, press mention consistency, NAP signals for local. Industry-specific entity signals for each track.",
+        tags:["Wikipedia strategy","Wikidata entity creation","Knowledge Panel acquisition","NAP consistency","Press mention velocity","Author entity building"],
+        lo:"Learners will build an entity presence plan covering at least 4 signals for their organisation.",
+        del:"Entity presence audit + 90-day build plan", industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"Site architecture, semantic HTML, and AI crawlability",dur:"65 min",
+        desc:"Internal linking patterns and content hierarchy that help AI crawlers build a semantic map of your site. Semantic HTML5 structuring, heading hierarchy as content signal, breadcrumb schema, and page depth optimisation. Covers robots.txt configuration for AI bots (GPTBot, ClaudeBot, PerplexityBot, CCBot) — when to allow, when to exclude, and how to selectively block at page level.",
+        tags:["Semantic HTML5 for AI","Heading hierarchy as signal","Breadcrumb schema","AI bot robots.txt","Internal link equity","Content depth vs breadth"],
+        lo:"Learners will audit their site's semantic structure and configure robots.txt with correct AI bot directives.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"case",label:"Case Study",name:"Success case: Investopedia's structured data architecture",dur:"60 min",
+        desc:"Live site audit of Investopedia's schema implementation. Deconstruct their structured data layers, how their definitional content model maps to schema types, and why they dominate AI answers in personal finance. Reverse-engineer a replication framework.",
+        tags:["Full schema inventory","Definitional content + schema","Citation dominance analysis","Replication framework"],
+        lo:null, del:"Industry-adapted schema audit checklist", industries:["Media","B2B"]},
+      {type:"failure",label:"Failure Case",name:"Failure case: schema without substance — a retail brand's cautionary tale",dur:"40 min",
+        desc:"A mid-size retail brand invested heavily in schema markup across 4,000 product pages. Rich results appeared. But AI citation rate stayed at zero. Root cause: product descriptions were thin, duplicate, or manufacturer-copy. Schema tells AI engines what your content is — it cannot fix content that lacks genuine informational value. The markup was perfect; the content was worthless.",
+        tags:["Schema ≠ quality","Thin content with perfect markup","AI citation requires substance","Content audit as prerequisite","Fix: content first, schema second"],
+        lo:"Learners will identify whether their schema implementation has content quality foundations.",
+        del:null, industries:["E-com","Local"], failure:true},
+      {type:"lab",label:"Lab",name:"Lab: Full technical AEO audit — your site",dur:"90 min",
+        desc:"Using Screaming Frog, Google's Rich Results Test, and the module's 40-point AEO readiness checklist, conduct a comprehensive technical audit of your own site. Produce a prioritised fix list ranked by estimated citation impact. Each fix includes: what to change, how to implement in your CMS, and how long it should take.",
+        tags:["40-point AEO checklist","Screaming Frog crawl config","Structured data gap report","Fix prioritisation matrix","CMS-specific implementation"],
+        lo:"Learners will produce a prioritised technical fix list with impact scores and CMS-specific implementation notes.",
+        del:"Technical AEO audit report — your site (40-point checklist)", industries:["B2B","E-com","Local","Media"]}
+    ],
+    assessment:{
+      title:"Module 2 assessment — 5 questions + 1 implementation task",
+      items:["Debug a JSON-LD snippet with 3 intentional errors","Select the correct schema type for 4 described page types","Identify the entity building gap from a described brand profile","Diagnose the crawlability issue from a robots.txt excerpt","Prioritise 5 technical fixes by citation impact","Implementation task: add valid HowTo schema to a provided HTML page"]
+    }
+  },
+  {
+    id:"m3",
+    bg:"#FAEEDA", tc:"#633806",
+    num:"03",
+    title:"Module 3 — Content optimisation strategies for GEO",
+    subtitle:"POV writing · cite-worthy content · multi-modal · digital PR · failure cases",
+    hours:"9 hrs", count:"7 sessions",
+    objectives:[
+      "Apply all 7 GEO content interventions to existing content and measure citation rate change",
+      "Write content using the POV (Position-Evidence-Implication) method that produces quotable paragraphs",
+      "Build a 90-day content calendar targeting high-value AI answer opportunities with industry-specific query mapping",
+      "Optimise video, podcast, and image content for multi-modal AI citation",
+      "Evaluate a digital PR campaign for its potential to build AI citation authority"
+    ],
+    sessions:[
+      {type:"theory",label:"Theory",name:"The 7 GEO content interventions — applied",dur:"75 min",
+        desc:"Taking the research findings from Module 1 and turning them into an actionable content framework. Each of the 7 interventions (statistics, expert quotes, fluency, citations, quotable sentences, unique data, authoritative sourcing) broken down into practical writing techniques. Includes before/after examples across all 4 industry tracks.",
+        tags:["7 interventions: writing techniques","Before/after examples","Statistics sourcing strategy","Expert quote acquisition","Unique data as moat","Industry-specific examples"],
+        lo:"Learners will apply all 7 interventions to a piece of existing content and predict the citation lift.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"The POV method — writing with a citable perspective",dur:"60 min",
+        desc:"The Position-Evidence-Implication (PEI) framework teaches how to structure paragraphs so that AI models quote rather than paraphrase them. Covers the 'quotable sentence' technique — writing sentences that stand alone as citable facts or perspectives, with specific grammatical and structural patterns.",
+        tags:["PEI framework","Quotable sentence structure","Contrarian vs consensus positioning","Thought leadership as citation driver","Generic content vs perspective-led"],
+        lo:"Learners will rewrite 3 generic paragraphs from their own site using the PEI method.",
+        del:null, industries:["B2B","Media"]},
+      {type:"workshop",label:"Workshop",name:"Workshop: Rewriting for citations — live content transformation",dur:"100 min",
+        desc:"Each learner brings 3 pieces of existing content. Using the PEI method and 7 GEO interventions, systematically transform each piece. Peer review pairs provide structured feedback. Each transformed piece is tested in Perplexity, ChatGPT Search, and Google AI Overviews immediately, and citation rate is recorded.",
+        tags:["Live content rewriting","Peer review rubric","3-engine citation test","Before/after citation tracking","Content brief templates"],
+        lo:"Learners will produce 3 GEO-optimised content pieces with measured citation rate improvement.",
+        del:"3 optimised content pieces + reusable PEI brief template + citation rate comparison", industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"Multi-modal content: video, podcast, and image optimisation",dur:"70 min",
+        desc:"AI answer engines increasingly surface video, audio, and image content. Covers: YouTube transcript structuring for AI citation, podcast show notes and metadata as source material, alt-text as semantic signal for AI, ImageObject schema, and how to repurpose existing audio/video content into AI-citable text assets.",
+        tags:["YouTube transcript optimisation","Podcast metadata for AI","Alt-text as AI signal","ImageObject schema","Video-to-text repurposing","Multi-modal citation tracking"],
+        lo:"Learners will audit their multi-modal content library and identify 3 optimisation opportunities.",
+        del:"Multi-modal content audit + optimisation plan", industries:["B2B","E-com","Media"]},
+      {type:"case",label:"Case Study",name:"Success case: NerdWallet's topical authority model",dur:"55 min",
+        desc:"NerdWallet appears in AI answers for financial queries at industry-leading rates. Deconstruct their topical authority architecture, content depth strategy, freshness signal system, and how they maintain citation dominance across thousands of pages at scale.",
+        tags:["Topical authority mapping","Content hub architecture","Freshness signal system","Scale vs depth balance","Replication framework"],
+        lo:null, del:"Topical authority map template for your niche", industries:["Media","B2B"]},
+      {type:"failure",label:"Failure Case",name:"Failure case: POV content that went too contrarian",dur:"40 min",
+        desc:"A B2B fintech brand adopted the POV method aggressively — publishing strong contrarian takes on industry consensus. Initial AI citations increased. Then the brand was cited as an example of a minority position rather than an authoritative source. AI contextualised their takes as 'fringe'. Lesson: POV must be grounded in evidence, not just differentiation for its own sake.",
+        tags:["Contrarian POV backfire","Citation context matters","Evidence-backed vs opinion","AI framing of minority positions","POV calibration"],
+        lo:"Learners will evaluate whether their POV content is evidence-grounded or opinion-driven.",
+        del:null, industries:["B2B","Media"], failure:true},
+      {type:"lab",label:"Lab",name:"Lab: 90-day AEO content calendar — conversational query research",dur:"90 min",
+        desc:"Using People Also Ask mining, AnswerThePublic, and Perplexity query analysis, identify high-value conversational query opportunities in your space. Map queries to the correct content format (FAQ, Guide, POV, Definitional), build a 90-day editorial calendar with industry-specific prioritisation, and assign GEO interventions to each planned piece.",
+        tags:["Conversational query research","PAA mining for AI queries","Answer gap identification","Content format selection","Industry-specific calendars","GEO intervention assignment"],
+        lo:"Learners will produce a 90-day content calendar with GEO interventions mapped to each piece.",
+        del:"90-day AEO/GEO content calendar with format and intervention mapping", industries:["B2B","E-com","Local","Media"]}
+    ],
+    assessment:{
+      title:"Module 3 assessment — 5 questions + content rewrite task",
+      items:["Identify which GEO interventions are missing from a content excerpt","Select the correct content format for 4 query types","Diagnose why a POV piece isn't being cited","Apply the PEI method to a provided paragraph","Rank 4 digital PR tactics by expected citation authority lift","Content rewrite task: transform a generic 200-word excerpt using PEI + 3 interventions"]
+    }
+  },
+  {
+    id:"m4",
+    bg:"#FAECE7", tc:"#712B13",
+    num:"04",
+    title:"Module 4 — Performance measurement and iteration",
+    subtitle:"SoMR · AI traffic in GA4 · executive reporting · competitive intelligence · iteration cycles",
+    hours:"9 hrs", count:"6 sessions",
+    objectives:[
+      "Configure a complete AEO measurement dashboard covering SoMR, Brand Mention Rate, and AI referral traffic",
+      "Build AI traffic attribution in GA4 using custom channel groupings and UTM conventions",
+      "Produce an executive-ready AEO performance report that justifies investment to a CMO",
+      "Design a 4-week iteration cycle for continuously improving citation rate based on measurement data",
+      "Monitor competitor AI visibility and identify emerging citation threats in real time"
+    ],
+    sessions:[
+      {type:"theory",label:"Theory",name:"The new measurement framework: beyond position tracking",dur:"70 min",
+        desc:"Define and operationalise the 5 core AEO metrics: Share of Model Response (SoMR), AI Brand Mention Rate, Citation Context Quality Score, Query Coverage Score, and AI Referral Traffic. Explain how each is measured, what constitutes a good benchmark, and how they relate to traditional SEO metrics.",
+        tags:["SoMR defined + measured","AI Brand Mention Rate","Citation Context Quality Score","Query Coverage Score","AI Referral Traffic","Metric benchmarks by industry"],
+        lo:"Learners will define all 5 metrics, explain how each is measured, and set a realistic 90-day target for each.",
+        del:null, industries:["B2B","E-com","Local","Media"]},
+      {type:"lab",label:"Lab",name:"Lab: GA4 AI traffic attribution setup",dur:"85 min",
+        desc:"Step-by-step configuration of GA4 for AI referral traffic attribution. Covers: creating a custom channel group for AI referral sources (ChatGPT, Perplexity, Claude.ai, Bing Copilot), configuring UTM conventions for trackable AI links, building an exploration report for AI traffic, and setting up conversion tracking for AI-sourced sessions.",
+        tags:["GA4 custom channel groups","AI referral source list","UTM conventions for AI","Exploration report build","Conversion tracking for AI traffic","Attribution model selection"],
+        lo:"Learners will configure AI traffic attribution in their own GA4 property with validated channel groupings.",
+        del:"GA4 AI attribution configuration + exploration report template", industries:["B2B","E-com","Local","Media"]},
+      {type:"lab",label:"Lab",name:"Lab: Building your AEO measurement dashboard",dur:"90 min",
+        desc:"Hands-on setup of a multi-source measurement dashboard combining: GSC AI Overviews filter data, Profound/Otterly.ai citation tracking, Brand24 AI mention monitoring, GA4 AI traffic data, and a custom Google Sheets SoMR tracker. Learners build their dashboard using provided templates and connect all data sources.",
+        tags:["GSC AI Overviews filter","Profound integration","Brand24 AI mention filter","Google Sheets SoMR tracker","Dashboard template provided","Data source connections"],
+        lo:"Learners will build a live AEO measurement dashboard pulling from at least 3 data sources.",
+        del:"Live AEO measurement dashboard (your data, provided template)", industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"Executive reporting: justifying AEO investment to leadership",dur:"65 min",
+        desc:"Translating AEO metrics into business language (pipeline influence, brand awareness lift, content efficiency), building the ROI case, and handling the 'how do we know it's working?' challenge when attribution is indirect. Includes a CMO-ready one-page brief template.",
+        tags:["SoMR to business metric translation","Pipeline influence modelling","Brand awareness lift proxy","Content efficiency framing","CMO objection handling","AEO ROI framework"],
+        lo:"Learners will produce a one-page executive summary translating their AEO metrics into business outcomes.",
+        del:"AEO executive reporting template (CMO-ready)", industries:["B2B","E-com","Local","Media"]},
+      {type:"theory",label:"Theory",name:"Competitive intelligence and the 4-week iteration cycle",dur:"60 min",
+        desc:"The 4-week iteration cycle: measure SoMR → identify citation gaps → prioritise content/technical fix → implement → re-measure. Competitive intelligence workflows: how to track when a competitor gains a citation you previously held, and how to respond. Covers AI answer volatility — why citations change and how to maintain consistency.",
+        tags:["4-week iteration cycle","Citation gap identification","Competitive citation monitoring","AI answer volatility","Response playbook","Continuous improvement workflow"],
+        lo:"Learners will design their organisation's 4-week AEO iteration cycle with defined owners and triggers.",
+        del:"4-week iteration cycle workflow for your team", industries:["B2B","E-com","Local","Media"]},
+      {type:"failure",label:"Failure Case",name:"Failure case: measuring the wrong things for 6 months",dur:"45 min",
+        desc:"A B2B technology firm ran an AEO programme for 6 months tracking organic rank, impressions, and click-through rate. Their CMO cut the budget. In reality, their SoMR had increased from 4% to 23% during the same period — but because they weren't measuring it, the value was invisible. The programme was cancelled right as it was starting to drive pipeline.",
+        tags:["Wrong metrics = invisible success","SoMR vs traditional rank","Budget justification failure","Measurement gap consequences","How to catch this early"],
+        lo:"Learners will audit their current measurement framework for AEO blind spots.",
+        del:null, industries:["B2B"], failure:true}
+    ],
+    assessment:{
+      title:"Module 4 assessment — 5 questions + dashboard task",
+      items:["Calculate SoMR from a provided prompt-testing dataset","Identify the measurement error in a described analytics setup","Select the right metric for a given executive stakeholder's concern","Diagnose why AI referral traffic isn't appearing in GA4","Design an iteration cycle response to a competitor gaining a key citation","Dashboard task: build SoMR tracker in a provided Google Sheets template"]
+    }
+  }
+];
+
+const badgeClass = {
+  theory:'sb-theory', lab:'sb-lab', case:'sb-case',
+  workshop:'sb-workshop', failure:'sb-failure', ethics:'sb-ethics', assessment:'sb-assessment'
+};
+
+function buildModules() {
+  const container = document.getElementById('modules-container');
+  MODULES.forEach(m => {
+    const mod = document.createElement('div');
+    mod.className = 'module';
+    mod.id = 'module-' + m.id;
+
+    const sessionsHTML = m.sessions.map((s, si) => {
+      const bc = badgeClass[s.type] || 'sb-theory';
+      const indHTML = s.industries.length ? `<div class="ind-row">${s.industries.map(i=>`<span class="ind-tag">${i}</span>`).join('')}</div>` : '';
+      const loHTML = s.lo ? `<div class="lo-box"><strong>Learning objective:</strong> ${s.lo}</div>` : '';
+      const delHTML = s.del ? `<div class="del-box"><strong>Deliverable:</strong> ${s.del}</div>` : '';
+      const failureIndicator = s.failure ? `<span style="font-size:10px;background:#fceaea;color:#a32020;padding:2px 8px;border-radius:20px;font-weight:500;border:1px solid rgba(163,32,32,0.2);">⚠ includes failure case</span>` : '';
+      return `<div class="session-card" data-type="${s.type}" id="sess-${m.id}-${si}">
+        <div class="sess-header" onclick="toggleSess('${m.id}',${si})">
+          <span class="sess-badge ${bc}">${s.label}</span>
+          <span class="sess-name">${s.name}</span>
+          <span class="sess-dur">${s.dur}</span>
+          <span class="sess-chevron">▾</span>
+        </div>
+        <div class="sess-body" id="sb-${m.id}-${si}">
+          <p class="sess-desc">${s.desc}</p>
+          <div class="tags-row">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}${failureIndicator}</div>
+          ${indHTML}${loHTML}${delHTML}
+        </div>
+      </div>`;
+    }).join('');
+
+    const objHTML = m.objectives.map(o =>
+      `<div class="obj-item"><div class="obj-check">✓</div><span>${o}</span></div>`
+    ).join('');
+
+    const asHTML = m.assessment.items.map(i =>
+      `<div class="as-item"><div class="as-dot"></div><span>${i}</span></div>`
+    ).join('');
+
+    mod.innerHTML = `
+      <div class="mod-header" onclick="toggleModule('${m.id}')">
+        <div class="mod-num-badge" style="background:${m.bg};color:${m.tc};">${m.num}</div>
+        <div class="mod-header-content">
+          <div class="mod-title">${m.title}</div>
+          <div class="mod-subtitle">${m.subtitle}</div>
+          <div class="mod-pills">
+            <span class="mod-pill" style="background:${m.bg};color:${m.tc};">${m.hours}</span>
+            <span class="mod-pill" style="background:${m.bg};color:${m.tc};">${m.count}</span>
+          </div>
+        </div>
+        <div class="mod-chevron">▾</div>
+      </div>
+      <div class="mod-body">
+        <div class="objectives-section">
+          <div class="obj-eyebrow">Learning objectives — Bloom's: Apply / Analyse / Evaluate</div>
+          <div class="obj-list">${objHTML}</div>
+        </div>
+        <div class="sessions-container">${sessionsHTML}</div>
+        <div class="assessment-strip">
+          <div class="as-title"><span class="as-icon">📝</span>${m.assessment.title}</div>
+          <div class="as-list">${asHTML}</div>
+        </div>
+      </div>`;
+    container.appendChild(mod);
+  });
+}
+
+function toggleModule(id) {
+  const mod = document.getElementById('module-' + id);
+  mod.classList.toggle('expanded');
+}
+
+function toggleSess(mid, si) {
+  const card = document.getElementById('sess-' + mid + '-' + si);
+  card.classList.toggle('open');
+}
+
+function toggleAllModules(expand) {
+  MODULES.forEach(m => {
+    const mod = document.getElementById('module-' + m.id);
+    if (expand) mod.classList.add('expanded');
+    else mod.classList.remove('expanded');
+  });
+}
+
+let currentFilter = 'all';
+function filterSessions(type, btn) {
+  currentFilter = type;
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+  else {
+    const allBtns = document.querySelectorAll(`.type-btn[data-type="${type}"]`);
+    allBtns.forEach(b => b.classList.add('on'));
+  }
+  MODULES.forEach(m => {
+    m.sessions.forEach((s, si) => {
+      const el = document.getElementById('sess-' + m.id + '-' + si);
+      if (!el) return;
+      if (type === 'all') el.classList.remove('hidden');
+      else if (type === 'failure') el.classList.toggle('hidden', !s.failure);
+      else el.classList.toggle('hidden', s.type !== type);
+    });
+  });
+}
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+buildModules();
+
+// ── GLOSSARY ────────────────────────────────────────────────
+
+const GL_CATS = {
+  core:        { name:'Core concepts',       color:'#1a4fd6' },
+  technical:   { name:'Technical',           color:'#0b6e5a' },
+  content:     { name:'Content & strategy',  color:'#8a4d00' },
+  measurement: { name:'Measurement',         color:'#b03322' },
+  frameworks:  { name:'Course frameworks',   color:'#4a2d8f' },
+  tools:       { name:'Tools & platforms',   color:'#0b5e80' },
+  ethics:      { name:'Ethics & legal',      color:'#7a1530' }
+};
+
+const GL_TERMS = [
+  {id:'aeo',cat:'core',icon:'⬡',name:'AEO',fullName:'Answer Engine Optimization',type:'Core concept',source:'Industry standard',
+   short:'Optimising content so AI engines extract and present it as a direct answer — not just a ranked link.',
+   def:`<p><strong>Answer Engine Optimization (AEO)</strong> is the practice of structuring, formatting, and presenting content so that AI-powered answer engines — including Google AI Overviews, Bing Copilot, and voice assistants — can extract it and surface it as a direct, authoritative answer to a user's query, without requiring a click-through.</p><p>AEO is fundamentally about <em>answerability</em>: making your content the clearest, most trustworthy, most structurally accessible response to a specific question. It builds on traditional SEO but shifts the goal from ranking position to answer extraction.</p><p>A well-AEO'd page doesn't just rank in the top 10 — it gets quoted verbatim or paraphrased directly inside AI-generated answer boxes, voice responses, or chatbot outputs.</p>`,
+   seo:'Traditional SEO targets a position in a list of links. AEO targets the answer box above those links — or inside an AI tool where no links are shown at all.',
+   course:'AEO is the "extraction" half of the course. Precisely defined in Module 0, Session 1.',
+   tags:['answer extraction','zero-click','AI Overviews','voice search'],related:['geo','somr','zero-click']},
+
+  {id:'geo',cat:'core',icon:'◈',name:'GEO',fullName:'Generative Engine Optimization',type:'Core concept',source:'Princeton/Georgia Tech, 2024',
+   short:'Optimising content to be cited, paraphrased, or quoted as a source inside AI-generated responses.',
+   def:`<p><strong>Generative Engine Optimization (GEO)</strong> is the practice of making your content authoritative, credible, and citable enough that large language models actively draw on it when synthesising a response — and attribute it to your source.</p><p>While AEO focuses on getting your exact answer extracted, GEO focuses on becoming the <em>source material</em> that generative AI uses when composing its own original answer. AEO = getting directly quoted. GEO = becoming a primary source the AI references when writing its own answer.</p><p>The term was formalised in a 2024 research paper from Princeton and Georgia Tech, which studied 10,000 queries across AI engines and identified specific content interventions that measurably increase citation frequency.</p>`,
+   seo:'SEO wins you traffic via clicks. GEO wins you citations — influence without necessarily generating a click, building brand authority directly inside AI-generated answers.',
+   course:'GEO is the "citation" half of the course. The 7 GEO interventions are taught in Module 1, Session 2 and applied throughout Module 3.',
+   tags:['generative AI','citation','LLM sourcing','Princeton research'],related:['aeo','rag','pei-method','7-interventions']},
+
+  {id:'llm',cat:'core',icon:'◎',name:'LLM',fullName:'Large Language Model',type:'Core concept',source:'Industry standard',
+   short:'An AI model trained on vast text data that generates human-like language — the engine behind all AI answer tools covered in this course.',
+   def:`<p>A <strong>Large Language Model (LLM)</strong> is an AI system trained on billions of words of text — websites, books, academic papers, code — to understand and generate human language. Examples include GPT-4o (OpenAI), Gemini (Google), Claude (Anthropic), and Llama (Meta).</p><p>LLMs underpin all the answer and generative engines this course focuses on. They do not "search" for information the way Google's crawler does — they generate text by predicting the most statistically likely and contextually appropriate continuation of a prompt, drawing on training patterns and, in RAG systems, from retrieved documents.</p><p>For AEO/GEO practitioners: LLMs have learned <em>which types of sources are authoritative</em> from patterns in training data. Content that looks like authoritative, well-cited expert writing is treated as more reliable.</p>`,
+   seo:null,course:'Understanding LLM mechanics is the foundation of Module 1. The "well-read researcher vs. search crawler" analogy is introduced here.',
+   tags:['AI model','natural language','GPT','Gemini','Claude','transformer'],related:['rag','training-cutoff']},
+
+  {id:'rag',cat:'core',icon:'⬙',name:'RAG',fullName:'Retrieval-Augmented Generation',type:'Core concept',source:'Lewis et al., Meta AI, 2020',
+   short:'An AI architecture that retrieves live documents at query time to supplement training knowledge — why your published content can influence AI answers today.',
+   def:`<p><strong>Retrieval-Augmented Generation (RAG)</strong> is an AI architecture where, at the moment a user submits a query, the system first <em>retrieves</em> relevant documents from a live source, then feeds those documents into the model as context to generate an accurate, up-to-date response.</p><p>Most modern AI search tools — Perplexity, ChatGPT with browsing, Google AI Overviews, Bing Copilot — are RAG systems. This is why your published web content can influence AI answers even for topics that postdate the model's training cutoff.</p><p>For content strategists: <em>your content needs to be crawlable and indexed (retrieval) AND structurally clear enough to be quoted accurately (comprehension)</em>. Both halves matter.</p>`,
+   seo:'Traditional SEO requires content to be crawled and indexed for ranking. RAG systems require content to be crawled, indexed, AND linguistically clear enough for an AI to quote it accurately mid-response.',
+   course:'RAG is the mechanical foundation of Module 1, Session 1. The distinction between training data and live retrieval motivates the content freshness strategy throughout the course.',
+   tags:['retrieval','live indexing','AI architecture','Perplexity','ChatGPT Search'],related:['llm','training-cutoff','crawlability']},
+
+  {id:'zero-click',cat:'core',icon:'○',name:'Zero-click',fullName:'Zero-click search',type:'Core concept',source:'Industry standard',
+   short:'A search that ends without any website click — answered entirely on the results or AI page. Represents 60–65% of all Google searches.',
+   def:`<p>A <strong>zero-click search</strong> occurs when a user's query is fully answered within the search engine results page or AI interface — via an AI Overview, featured snippet, or knowledge panel — so the user has no reason to click through to any source website.</p><p>Zero-click represents a growing proportion of all searches. For AEO/GEO, this creates a strategic challenge: your content may be cited and used, but you receive no traffic credit. The strategic response is to focus on <em>brand citation</em> over traffic — ensuring that when AI answers using your content, your brand name is mentioned, building awareness even without a site visit.</p>`,
+   seo:'Traditional SEO success = clicks to your site. Zero-click optimisation success = your brand is named in the answer, even without a click.',
+   course:'Zero-click economics are introduced in Module 0 and frame the entire business case for AEO/GEO investment.',
+   tags:['no click','AI Overviews','SERP features','traffic decline','brand citation'],related:['aeo','somr']},
+
+  {id:'training-cutoff',cat:'core',icon:'◷',name:'Training cutoff',fullName:'Training data cutoff date',type:'Core concept',source:'Industry standard',
+   short:'The date beyond which an LLM has no training knowledge — requiring RAG retrieval to answer more recent questions.',
+   def:`<p>Every LLM is trained on a dataset collected up to a specific point in time — its <strong>training cutoff date</strong>. For topics after this date, the model has no direct training knowledge and must either refuse, hallucinate, or (in RAG systems) retrieve current information.</p><p>For AEO/GEO: (1) content published after the cutoff can still influence RAG-based AI answers if well-indexed, (2) models may have outdated knowledge about your brand from training (hallucination risk), and (3) freshness signals help RAG retrieval systems prioritise your content over older alternatives.</p>`,
+   seo:null,course:'Training cutoff is introduced in Module 1 and motivates why content freshness and RAG-awareness matter in the content calendar (Module 3).',
+   tags:['knowledge cutoff','data freshness','LLM limitation','RAG necessity'],related:['rag','ai-hallucination','freshness-signals']},
+
+  {id:'schema',cat:'technical',icon:'{}',name:'Schema markup',fullName:'Structured data / Schema markup',type:'Technical standard',source:'Schema.org (Google, Microsoft, Yahoo)',
+   short:'Standardised code added to web pages that tells AI crawlers exactly what your content means — not just what it says.',
+   def:`<p><strong>Schema markup</strong> (structured data) is code — typically JSON-LD — added to a page's HTML that uses Schema.org vocabulary to label the meaning of content: a question/answer pair, a how-to step, an organisation, a product, an author. It tells AI engines the structure and semantics of your content with high confidence.</p><p>Key schema types for AEO/GEO: <strong>FAQPage</strong>, <strong>HowTo</strong>, <strong>Article/NewsArticle</strong>, <strong>Organization</strong>, <strong>Product</strong>, <strong>Person</strong>, <strong>LocalBusiness</strong>, <strong>BreadcrumbList</strong>, <strong>ImageObject</strong>.</p><p>A FAQPage schema explicitly tells the AI: "this question has this answer — trust this mapping." Schema is the semantic layer that dramatically increases AI citation confidence for marked-up content.</p>`,
+   seo:'For traditional SEO, schema primarily unlocks rich results (stars, FAQ dropdowns in SERPs). For AEO/GEO, schema is a trust signal — it explicitly declares content meaning, increasing citation confidence.',
+   course:'Module 2 is largely dedicated to schema. Labs cover all major schema types with CMS-specific implementation for WordPress, Webflow, and Shopify.',
+   tags:['JSON-LD','structured data','Schema.org','FAQPage','HowTo','Organization'],related:['json-ld','entity','rich-results']},
+
+  {id:'json-ld',cat:'technical',icon:'[]',name:'JSON-LD',fullName:'JavaScript Object Notation for Linked Data',type:'Technical format',source:'W3C standard',
+   short:'The Google-recommended format for schema markup — a clean JavaScript block in page HTML that doesn\'t interfere with visible content.',
+   def:`<p><strong>JSON-LD</strong> is the recommended format for implementing schema markup. Instead of embedding schema attributes into HTML tags, JSON-LD sits in a separate <code>&lt;script type="application/ld+json"&gt;</code> block — keeping markup completely separate from visible content. Easy to add, update, and manage via CMS plugins without risking HTML breakage.</p>`,
+   seo:null,course:'JSON-LD templates for all major schema types are provided in Module 2, Lab 2 with CMS-specific guides.',
+   tags:['JSON','schema format','W3C','Google preferred'],related:['schema']},
+
+  {id:'entity',cat:'technical',icon:'◉',name:'Entity',fullName:'Named entity / knowledge entity',type:'Technical concept',source:'Knowledge graph / NLP',
+   short:'A real-world thing — person, organisation, place, product, concept — that an AI engine can uniquely identify and distinguish from all others.',
+   def:`<p>An <strong>entity</strong> is any uniquely identifiable real-world thing. Entities are how AI engines organise knowledge — rather than matching keywords, they identify <em>which specific thing</em> is being discussed and retrieve information about it.</p><p>Being recognised as a well-defined entity with consistent signals is critical for AEO. When an AI engine can confidently identify your brand as a specific, well-documented entity, it can cite you accurately rather than inferring who you are from surrounding text.</p><p>Entity signals include: Wikipedia article, Wikidata entry, Google Knowledge Panel, consistent Name/Address/Phone (NAP) data, LinkedIn company page, and consistent brand name usage across authoritative domains.</p>`,
+   seo:'Traditional SEO optimises for keywords — matching what users type. Entity optimisation is about being recognised as a specific known thing, which AI engines treat with far higher trust.',
+   course:'Entity building strategy is Module 2, Session 3. A 90-day entity build plan is the session deliverable.',
+   tags:['named entity','entity recognition','NLP','Wikidata','brand identity'],related:['knowledge-graph','entity-building','schema']},
+
+  {id:'knowledge-graph',cat:'technical',icon:'⬡',name:'Knowledge Graph',fullName:'Google Knowledge Graph / Bing Entity Store',type:'Technical infrastructure',source:'Google (2012)',
+   short:'Google\'s structured entity database — powering Knowledge Panels, AI Overviews, and AI answer generation. High-value for brand entity presence.',
+   def:`<p>The <strong>Knowledge Graph</strong> is Google's database of billions of real-world entities and their relationships — used to power Knowledge Panels, AI Overviews, and AI-generated answer content. Bing has an equivalent Entity Store.</p><p>When an AI answers "Who is the CEO of [Company]?", it typically draws from the Knowledge Graph rather than live web retrieval — making Knowledge Graph presence extremely high-value. Data is sourced from Wikipedia/Wikidata (highest trust), authoritative news, Organization schema, and structured third-party directories.</p>`,
+   seo:null,course:'Module 2, Session 3 covers the full Knowledge Graph acquisition strategy, including Knowledge Panel verification.',
+   tags:['Google','Bing','entity database','Knowledge Panel','brand authority'],related:['entity','schema']},
+
+  {id:'rich-results',cat:'technical',icon:'★',name:'Rich results',fullName:'Rich results / SERP features',type:'Technical output',source:'Google Search Central',
+   short:'Enhanced search displays — stars, FAQs, HowTo steps — triggered by schema markup and correlated with higher AI citation rates.',
+   def:`<p><strong>Rich results</strong> go beyond the standard blue link — showing star ratings, FAQ dropdowns, HowTo steps, event dates, and more. Triggered by correctly implemented schema markup.</p><p>While not the primary AEO/GEO goal, rich results are a useful proxy: if your schema is triggering rich results, it is being correctly parsed by Google's AI systems. There is a moderate correlation between rich result eligibility and AI citation rate, because both require the same underlying structural quality.</p>`,
+   seo:"For traditional SEO, rich results improve CTR. For AEO/GEO, they're a validation signal — proof that schema is being correctly parsed by Google's systems.",
+   course:'Rich results validation is covered in Module 2, Lab 2 using Google\'s Rich Results Test.',
+   tags:['SERP features','schema output','FAQ rich result','HowTo rich result'],related:['schema','json-ld']},
+
+  {id:'crawlability',cat:'technical',icon:'↻',name:'Crawlability',fullName:'Crawlability and AI bot accessibility',type:'Technical concept',source:'Industry standard',
+   short:'Whether AI crawlers can discover, access, and read your content — a prerequisite for any AEO/GEO result.',
+   def:`<p><strong>Crawlability</strong> in AEO/GEO refers to whether AI-specific crawlers — GPTBot (OpenAI), ClaudeBot (Anthropic), PerplexityBot, CCBot (Common Crawl), GoogleBot — can discover and read your content. Without crawlability, no content or schema optimisation will produce AI citations.</p><p>Key crawlability factors: correct robots.txt configuration (AI bots must not be blocked), page speed, JavaScript rendering (some AI crawlers don't execute JS — content should be in HTML), and paywall detection (paywalled content is rarely cited without a publisher partnership).</p>`,
+   seo:'Traditional SEO crawlability focuses on GoogleBot. AEO/GEO requires each AI crawler to be separately assessed and permitted.',
+   course:'AI bot crawlability audit is part of Module 2, Lab 3 (40-point technical AEO checklist).',
+   tags:['GPTBot','ClaudeBot','PerplexityBot','robots.txt','AI indexing'],related:['robots-txt','site-architecture']},
+
+  {id:'robots-txt',cat:'technical',icon:'∅',name:'robots.txt',fullName:'robots.txt AI bot configuration',type:'Technical file',source:'Robots Exclusion Protocol',
+   short:'The file that controls which crawlers access which pages — critical for controlling which AI engines can index and cite your content.',
+   def:`<p>The <strong>robots.txt</strong> file at your domain root tells crawlers which pages they can and cannot access. For AEO/GEO, each major AI crawler has its own user agent — you can allow or block them independently.</p><p>Key AI crawler user agents: <code>GPTBot</code> (OpenAI), <code>ClaudeBot</code> (Anthropic), <code>PerplexityBot</code> (Perplexity), <code>CCBot</code> (Common Crawl), <code>GoogleBot</code> (Google AI Overviews), <code>Bingbot</code> (Bing Copilot). You may block some while allowing others based on your business and legal strategy.</p>`,
+   seo:'Traditional SEO robots.txt is written for GoogleBot. AEO/GEO requires explicitly considering each AI crawler independently.',
+   course:'robots.txt for AI bots is covered in Module 0 (ethics) and Module 2, Session 4. Implementation guide is a Module 0 deliverable.',
+   tags:['GPTBot','ClaudeBot','PerplexityBot','CCBot','AI bot blocking'],related:['crawlability','ethics']},
+
+  {id:'freshness-signals',cat:'technical',icon:'◌',name:'Freshness signals',fullName:'Content freshness signals',type:'Technical concept',source:'Industry standard',
+   short:'Indicators to AI retrieval systems that your content is current and maintained — increasing trust and retrieval priority.',
+   def:`<p><strong>Freshness signals</strong> tell AI RAG retrieval systems your content is up-to-date. For engines choosing between multiple sources on the same topic, freshness is a meaningful tiebreaker. Key signals: <code>datePublished</code> and <code>dateModified</code> in schema, visible "last updated" labels, substantive regular edits (not just cosmetic changes), and sitemap <code>lastmod</code> values reflecting genuine changes.</p>`,
+   seo:null,course:'Freshness signals are covered in Module 2 technical session and inform the content calendar update cadence in Module 3.',
+   tags:['dateModified','datePublished','content updates','sitemap','recency'],related:['rag','schema']},
+
+  {id:'site-architecture',cat:'technical',icon:'⊞',name:'Site architecture',fullName:'Site architecture and semantic structure',type:'Technical concept',source:'Industry standard',
+   short:'The organisation of your website\'s pages, headings, and internal links — which tells AI engines your topical structure and authority.',
+   def:`<p><strong>Site architecture</strong> in AEO/GEO refers to how content is organised, connected, and structured — both at the page level (semantic HTML, heading hierarchy) and at the site level (internal linking, content hubs).</p><p>AI engines build a semantic map of your site by following internal links and reading structural signals. A well-linked, topically organised architecture gives AI engines confidence in your topical authority. Key elements: semantic HTML5 tags, clear H1→H2→H3 hierarchy, BreadcrumbList schema, and topic cluster structure.</p>`,
+   seo:null,course:'Site architecture for AI is Module 2, Session 4.',
+   tags:['topic clusters','internal linking','semantic HTML5','heading hierarchy'],related:['crawlability','topical-authority']},
+
+  {id:'topical-authority',cat:'content',icon:'◈',name:'Topical authority',fullName:'Topical authority',type:'Strategic concept',source:'Industry standard',
+   short:'The degree to which AI engines recognise your site as a comprehensive, reliable expert on a specific subject.',
+   def:`<p><strong>Topical authority</strong> is the extent to which an AI engine considers your site a go-to, comprehensive expert resource on a subject — as opposed to a site that covers a topic occasionally. AI engines assess it by looking at: content breadth and depth, internal linking between related pages, expert authorship consistency, external authoritative citations, and existing AI citation frequency for the topic.</p><p>Topical authority is a multiplier — a site with strong authority will see new content cited faster and more reliably than an isolated page from an unknown domain.</p>`,
+   seo:'Traditional SEO can win with a single well-optimised page. AI citation tends to favour established topical authority — a brilliant article from an unknown domain is far less likely to be cited than a good article from a recognised authority.',
+   course:'Topical authority mapping is a deliverable in Module 3, Session 5 (NerdWallet case study).',
+   tags:['subject matter expertise','content depth','topic clusters','authority signals'],related:['e-e-a-t','content-hub']},
+
+  {id:'e-e-a-t',cat:'content',icon:'✦',name:'E-E-A-T',fullName:'Experience, Expertise, Authoritativeness, Trustworthiness',type:'Strategic framework',source:"Google Search Quality Rater Guidelines",
+   short:'Google\'s quality framework for content credibility — which maps directly to the trust signals LLMs use to weight sources.',
+   def:`<p><strong>E-E-A-T</strong> is Google's framework for evaluating content quality: <strong>Experience</strong> (has the author personally experienced what they're writing about?), <strong>Expertise</strong> (does the author have demonstrable expertise?), <strong>Authoritativeness</strong> (is the site/author recognised by other credible sources?), <strong>Trustworthiness</strong> (is the content accurate and transparent?).</p><p>For AEO/GEO, E-E-A-T maps directly to LLM trust signals: author entity recognition, citation by authoritative external domains, factual accuracy, and brand consistency across platforms.</p>`,
+   seo:null,course:'E-E-A-T to LLM trust signal mapping is covered in Module 1, Session 1.',
+   tags:['Google quality','author credibility','content trust','YMYL'],related:['entity','topical-authority','author-entity']},
+
+  {id:'definitional-content',cat:'content',icon:'▷',name:'Definitional content',fullName:'Definitional / "what is X" content',type:'Content strategy',source:'Course analysis (HubSpot case)',
+   short:'"What is X" content — the format most frequently cited by AI engines for informational queries.',
+   def:`<p><strong>Definitional content</strong> is structured around precisely defining a concept, term, or entity. "What is content marketing?", "What is compound interest?" — these are definitional queries and among the most cited content types in AI-generated answers.</p><p>Definitional content performs strongly in AEO/GEO because it has a clear question (the term being defined) and a clear answer (the definition) — mapping directly to FAQPage schema and to what RAG retrieval systems seek when answering "what is..." queries. HubSpot's citation dominance is largely built on systematic definitional content.</p>`,
+   seo:null,course:'Definitional content strategy is analysed in Module 1, Session 3 (HubSpot case study).',
+   tags:['what is X','informational queries','HubSpot model','FAQ format'],related:['aeo','schema']},
+
+  {id:'cite-worthy',cat:'content',icon:'❝',name:'Cite-worthy content',fullName:'Cite-worthy content attributes',type:'Content strategy',source:'GEO research paper, 2024',
+   short:'The specific attributes — statistics, expert quotes, unique data, fluency — that measurably increase AI citation probability.',
+   def:`<p><strong>Cite-worthy content</strong> possesses specific, measurable attributes that make AI engines more likely to cite or quote it. Identified in the 2024 Princeton/Georgia Tech GEO study across 10,000 queries, the 7 citation-boosting attributes are: statistics and quantitative data (+40%), expert quotes and attributed statements (+30%), unique original data (+35%), authoritative sourcing (+25%), fluency and clear writing (+15%), citations/references to external sources (+12%), and quotable standalone sentences (+10%). Content combining multiple attributes sees compounding citation lift.</p>`,
+   seo:null,course:'Cite-worthy attributes are introduced in Module 1 (GEO paper session) and applied in the Module 3 workshop.',
+   tags:['citation lift','GEO interventions','statistics','expert quotes','original data'],related:['geo','7-interventions','pei-method']},
+
+  {id:'content-hub',cat:'content',icon:'⊕',name:'Content hub',fullName:'Content hub / topic cluster',type:'Content strategy',source:'Industry standard',
+   short:'A structured cluster of interconnected content demonstrating topical authority to AI engines.',
+   def:`<p>A <strong>content hub</strong> is a pillar page plus supporting cluster pages, all interlinked around a core topic. The cluster signals to AI engines that your site is a comprehensive authority — not just a single page that mentions a topic. A site with 40 interlinked articles on email marketing is treated as more authoritative for email marketing queries than a site with one viral post, even if that post is better written.</p>`,
+   seo:null,course:'Content hub architecture is reverse-engineered from NerdWallet in Module 3, Session 5.',
+   tags:['pillar pages','topic clusters','internal linking','NerdWallet model'],related:['topical-authority','site-architecture']},
+
+  {id:'author-entity',cat:'content',icon:'◎',name:'Author entity',fullName:'Author entity / author authority',type:'Content strategy',source:'Google E-E-A-T, Schema.org',
+   short:'The recognisability and credibility of a content author as a known, verified expert — a significant AI citation trust signal.',
+   def:`<p>An <strong>author entity</strong> is the AI/search engine's recognition of a specific person as a known, identifiable expert. When an article is written by someone the AI can verify as credible — through Wikipedia, professional profiles, speaking history, or published works — the content benefits from elevated citation trust. Signals include: author bio page with external links, <code>Person</code> schema, Wikidata entry, consistent bylines, and Google Knowledge Panel for the author.</p>`,
+   seo:null,course:'Author entity building is covered in Module 2, Session 3 alongside brand entity strategy.',
+   tags:['byline','author bio','Person schema','credibility','E-E-A-T'],related:['e-e-a-t','entity','schema']},
+
+  {id:'digital-pr',cat:'content',icon:'◇',name:'Digital PR',fullName:'Digital PR for citation authority',type:'Content strategy',source:'Industry standard',
+   short:'Earning editorial coverage on high-authority domains — building the external citation profile AI engines use to assess brand credibility.',
+   def:`<p><strong>Digital PR</strong> for AEO/GEO means securing editorial mentions in high-authority publications — not for backlinks alone, but to build the external citation profile AI engines use to calibrate brand trustworthiness. When AI engines decide whether to cite your content, one signal is whether other authoritative sources reference you. Most effective tactics: original research and data studies (AI engines trust cited data), executive thought leadership in major publications, expert commentary, podcast appearances with published transcripts, and Wikipedia citations.</p>`,
+   seo:"Traditional SEO values digital PR for backlinks and domain authority. AEO/GEO values it for brand entity reinforcement — making your brand 'known' to AI knowledge systems.",
+   course:'Digital PR for AI citation authority is covered in Module 3.',
+   tags:['brand mentions','editorial coverage','authority building','Wikipedia'],related:['e-e-a-t','topical-authority','entity']},
+
+  {id:'multi-modal',cat:'content',icon:'▦',name:'Multi-modal content',fullName:'Multi-modal content optimisation',type:'Content strategy',source:'Course-specific term',
+   short:'Optimising video, audio, and image content so AI engines can index, understand, and cite it alongside text.',
+   def:`<p><strong>Multi-modal content optimisation</strong> covers non-text formats — video, audio/podcasts, images — ensuring AI engines can understand and cite them. Techniques: YouTube transcript structuring (auto-captions + manual correction), podcast show notes and chapter markers, <code>ImageObject</code> schema with detailed alt text, and repurposing audio/video as companion text pages that can be cited independently. A structured expert interview transcript can be cited as a text source even for users who never watch the video.</p>`,
+   seo:null,course:'Multi-modal optimisation is Session 4 of Module 3 — entirely absent from the v1 course design.',
+   tags:['video transcripts','podcast metadata','ImageObject schema','alt-text','YouTube'],related:['schema','cite-worthy']},
+
+  {id:'somr',cat:'measurement',icon:'◑',name:'SoMR',fullName:'Share of Model Response',type:'Measurement metric',source:'Course-specific (emerging industry)',
+   short:'The percentage of AI-generated responses to a defined query set that mention or cite your brand — your primary AEO/GEO KPI.',
+   def:`<p><strong>Share of Model Response (SoMR)</strong> is the core KPI of AEO/GEO measurement. Formula: <em>SoMR = (Queries where your brand is mentioned ÷ Total queries tested) × 100</em>. Measured per AI engine, per query category, and tracked over time. A baseline SoMR of 5–10% is common before optimisation; a well-executed programme can achieve 30–60% for high-priority query sets within 6–12 months.</p>`,
+   seo:'Traditional SEO measures rank position (1–10) and organic traffic. SoMR measures the percentage of AI conversations where your brand is present — a fundamentally different unit of measurement.',
+   course:'SoMR is defined in Module 4, Session 1. A manual SoMR tracker is built in Module 4, Lab 2. The failure case study shows the cost of not measuring it.',
+   tags:['primary KPI','brand citation rate','AI visibility','query testing'],related:['ai-brand-mention-rate','query-coverage','20-query-protocol']},
+
+  {id:'ai-brand-mention-rate',cat:'measurement',icon:'◐',name:'AI Brand Mention Rate',fullName:'AI Brand Mention Rate',type:'Measurement metric',source:'Course-specific term',
+   short:'How often your brand name appears in AI-generated responses — regardless of whether it is cited as a source.',
+   def:`<p><strong>AI Brand Mention Rate</strong> tracks how often your brand name appears in AI-generated responses — distinct from SoMR in that it counts any mention, not just source citations. Tracked using brand monitoring tools (Brand24) configured for AI platform outputs, plus manual prompt testing. Captures brand presence in zero-click scenarios where no link is provided but your name is still present in the answer.</p>`,
+   seo:null,course:'AI Brand Mention Rate is one of 5 core metrics in Module 4, Session 1. Brand24 is configured in Module 0, Lab.',
+   tags:['brand awareness','AI mentions','brand monitoring','Brand24'],related:['somr','citation-context']},
+
+  {id:'citation-context',cat:'measurement',icon:'◔',name:'Citation Context Quality',fullName:'Citation Context Quality Score',type:'Measurement metric',source:'Course-specific term',
+   short:'A qualitative assessment of how your brand is presented when cited — as primary authority, supporting example, or fringe minority view.',
+   def:`<p><strong>Citation Context Quality</strong> assesses not just whether your brand is cited but <em>how</em>. Four citation types: (1) Primary authoritative source — "According to [Brand]'s research..." (best), (2) Supporting example — "Companies like [Brand] have adopted..." (good), (3) Mentioned option — "Other providers include [Brand]..." (neutral), (4) Contrarian minority view — "While [Brand] argues otherwise..." (can damage brand). Monitoring requires qualitative reading of AI responses, not just counting mentions.</p>`,
+   seo:null,course:'Citation Context Quality is one of 5 core metrics. The POV failure case in Module 3 shows what Category 4 citations look like in practice.',
+   tags:['citation framing','qualitative measurement','brand perception'],related:['somr','ai-brand-mention-rate']},
+
+  {id:'query-coverage',cat:'measurement',icon:'◫',name:'Query Coverage Score',fullName:'Query Coverage Score',type:'Measurement metric',source:'Course-specific term',
+   short:'The percentage of your target query universe for which you are being cited — measuring breadth of AI visibility.',
+   def:`<p><strong>Query Coverage Score</strong> measures how many distinct queries in your target universe are returning your brand citations. While SoMR measures citation rate on a fixed query set, Query Coverage measures how wide your citation footprint is. A high SoMR on a narrow query set is fragile; a high Query Coverage across a broad set is durable brand protection. The 90-day content calendar is designed to systematically expand this score.</p>`,
+   seo:null,course:'Query Coverage is one of 5 core metrics in Module 4, Session 1.',
+   tags:['query breadth','citation footprint','content gap analysis'],related:['somr','content-calendar']},
+
+  {id:'ai-referral-traffic',cat:'measurement',icon:'↗',name:'AI referral traffic',fullName:'AI referral traffic (GA4)',type:'Measurement metric',source:'Google Analytics 4',
+   short:'Website sessions from users clicking AI-cited links — tracked in GA4 via custom channel groupings for ChatGPT, Perplexity, Claude.ai, and Bing.',
+   def:`<p><strong>AI referral traffic</strong> is traffic arriving from users clicking source citations in AI responses — from Perplexity, ChatGPT with browsing, or Bing Copilot. It appears as referral traffic from domains like <code>perplexity.ai</code>, <code>chatgpt.com</code>, <code>claude.ai</code>. Without a custom GA4 channel group, this traffic is scattered across Generic Referral and Direct channels and invisible as a distinct source. AI referral traffic carries high intent — users specifically sought more detail on the cited topic.</p>`,
+   seo:'Traditional SEO traffic attribution is relatively mature. AI referral traffic attribution requires custom configuration and is growing faster than most other referral sources.',
+   course:'Full GA4 AI attribution setup is Module 4, Lab 1 — frequently cited by learners as highest practical value session.',
+   tags:['GA4','custom channel group','referral traffic','Perplexity traffic'],related:['somr','ga4']},
+
+  {id:'4-week-cycle',cat:'measurement',icon:'↺',name:'4-week cycle',fullName:'4-week AEO/GEO iteration cycle',type:'Operational framework',source:'Course-specific framework',
+   short:'The structured weekly rhythm for continuously improving AI citation rate: measure → gap analysis → implement → re-measure.',
+   def:`<p>The <strong>4-week iteration cycle</strong> is the operational framework for continuous improvement: <strong>Week 1</strong> — run full 20-query protocol, update SoMR and Query Coverage. <strong>Week 2</strong> — identify citation gaps, competitor gains, emerging query categories. <strong>Week 3</strong> — produce/update content for highest-priority gaps, implement technical backlog fixes. <strong>Week 4</strong> — spot-check Week 3 implementations, update content calendar, prepare next cycle gap analysis.</p>`,
+   seo:null,course:'The 4-week iteration cycle is Module 4, Session 5. Learners design their organisation\'s own version as a deliverable.',
+   tags:['operational cadence','iterative improvement','measurement cycle'],related:['somr','query-coverage','content-calendar']},
+
+  {id:'pei-method',cat:'frameworks',icon:'▲',name:'PEI method',fullName:'Position-Evidence-Implication method',type:'Course framework',source:'Course-specific (derived from GEO research)',
+   short:'A three-part writing framework that produces "quotable paragraphs" — structured so AI engines quote rather than paraphrase your content.',
+   def:`<p>The <strong>PEI method</strong> (Position-Evidence-Implication) is the course's core writing framework for producing AI-citable content:</p><p><strong>Position:</strong> A clear, opinionated, standalone citable sentence. Not "it depends" — a genuine claim. <em>Example: "B2B programmes that publish fewer, longer-form pieces consistently outperform high-frequency short-form strategies in AI citation rate."</em></p><p><strong>Evidence:</strong> Specific, attributed evidence immediately following the position — a statistic, research finding, or expert quote that an AI engine can verify. <em>Example: "A 2024 analysis of 10,000 AI queries found content with original statistics was cited 40% more frequently."</em></p><p><strong>Implication:</strong> The practical implication for the reader. <em>Example: "For marketing managers, this means investing in primary research — even small surveys — delivers disproportionate citation returns."</em></p>`,
+   seo:null,course:'PEI is introduced in Module 3, Session 2 and applied in the live content transformation workshop (Session 3). A reusable PEI brief template is a session deliverable.',
+   tags:['writing framework','quotable paragraphs','Position-Evidence-Implication','GEO writing'],related:['geo','cite-worthy','7-interventions']},
+
+  {id:'7-interventions',cat:'frameworks',icon:'⑦',name:'7 GEO interventions',fullName:'The 7 GEO content interventions',type:'Course framework',source:'Princeton/Georgia Tech GEO paper, 2024',
+   short:'Seven empirically validated content changes that measurably increase AI citation probability — with specific lift percentages from the research.',
+   def:`<p>Empirically validated in the 2024 GEO research paper across 10,000 queries:</p><p><strong>1. Add statistics and quantitative data</strong> (+40%) — Specific numbers dramatically increase citation confidence.</p><p><strong>2. Include expert quotes and attributed statements</strong> (+30%) — Attribution matters as much as the quote content.</p><p><strong>3. Improve writing fluency and clarity</strong> (+15%) — AI engines associate writing quality with reliability.</p><p><strong>4. Add citations to external sources</strong> (+12%) — Paradoxically increases your own citation rate by signalling intellectual honesty.</p><p><strong>5. Craft quotable standalone sentences</strong> (+10%) — Sentences that work as complete citable statements in isolation.</p><p><strong>6. Include unique original data</strong> (+35%) — You become the only source for that specific fact — a citation moat.</p><p><strong>7. Use authoritative sourcing throughout</strong> (+25%) — Consistently referencing well-regarded sources elevates surrounding content authority.</p>`,
+   seo:null,course:'Introduced in Module 1, Session 2 (research paper session). Applied in Module 3, Session 1. The content rewrite workshop tests all 7 on real content.',
+   tags:['GEO research','citation lift','statistics','expert quotes','original data','fluency'],related:['geo','cite-worthy','pei-method']},
+
+  {id:'40-point-checklist',cat:'frameworks',icon:'✓',name:'40-point AEO checklist',fullName:'40-point technical AEO readiness checklist',type:'Course framework',source:'Course-specific tool',
+   short:'A structured audit checklist across 5 dimensions — used in Module 2\'s full site audit lab to produce a prioritised fix list.',
+   def:`<p>The <strong>40-point AEO checklist</strong> covers 5 dimensions: <strong>Schema markup (10 points)</strong> — schema types, validation errors, freshness dates, author schema, organisation completeness. <strong>Crawlability (8 points)</strong> — AI bot robots.txt, page speed, JavaScript rendering, sitemap currency. <strong>Entity signals (8 points)</strong> — Wikipedia/Wikidata, Knowledge Panel, NAP consistency, press mentions. <strong>Content structure (8 points)</strong> — semantic HTML5, heading hierarchy, answer-formatted paragraphs, FAQ content. <strong>Site architecture (6 points)</strong> — topic clusters, pillar pages, internal link density, breadcrumbs.</p>`,
+   seo:null,course:'Provided as a template in Module 2, Lab 3. Results form the prioritised technical fix list deliverable.',
+   tags:['technical audit','readiness assessment','site checklist'],related:['schema','crawlability','entity','site-architecture']},
+
+  {id:'20-query-protocol',cat:'frameworks',icon:'⊗',name:'20-query protocol',fullName:'20-query AI citation testing protocol',type:'Course framework',source:'Course-specific methodology',
+   short:'The standardised methodology for manually testing AI citation rates across 20 target queries and 3 AI engines.',
+   def:`<p>The <strong>20-query testing protocol</strong> is the course's standardised manual measurement methodology. <strong>Query composition:</strong> 8 category/informational queries, 6 comparison queries, 4 problem/solution queries, 2 branded queries. <strong>Testing procedure:</strong> run each through Perplexity (with citations), ChatGPT with web search, and Google AI Overviews. Record: Was your brand mentioned? Cited as source? Positive/neutral/minority framing? Which competitor most cited? <strong>Frequency:</strong> Full test monthly; 5-query spot-check weekly in the 4-week cycle.</p>`,
+   seo:null,course:'Introduced in Module 1 Lab. Used throughout as the primary measurement methodology.',
+   tags:['prompt testing','manual measurement','SoMR tracking','query selection'],related:['somr','4-week-cycle']},
+
+  {id:'entity-building',cat:'frameworks',icon:'◉',name:'Entity build plan',fullName:'90-day entity presence build plan',type:'Course framework',source:'Course-specific deliverable',
+   short:'A structured 90-day plan for building the external entity signals that tell AI engines your brand is a known, trusted organisation.',
+   def:`<p>The <strong>90-day entity building plan</strong> works across 4 signal categories: <strong>Weeks 1–4 (Foundation)</strong> — audit and correct Organisation schema, create/update Wikidata entry, ensure NAP consistency, publish author bio pages with Person schema. <strong>Weeks 5–8 (Authority)</strong> — begin Knowledge Panel verification, submit Wikipedia article (if notability criteria met), secure 3–5 editorial mentions, optimise social profiles. <strong>Weeks 9–12 (Amplification)</strong> — monitor Knowledge Panel accuracy, pursue podcast appearances with published transcripts, submit to industry directories, track entity improvements in AI citation rate.</p>`,
+   seo:null,course:'The 90-day entity building plan is a deliverable in Module 2, Session 3.',
+   tags:['entity signals','90-day plan','Wikipedia','Wikidata','Knowledge Panel'],related:['entity','knowledge-graph']},
+
+  {id:'content-calendar',cat:'frameworks',icon:'⊟',name:'90-day content calendar',fullName:'90-day AEO/GEO content calendar',type:'Course framework',source:'Course-specific deliverable',
+   short:'A prioritised editorial plan mapping target AI queries to content formats and GEO interventions across a 90-day window.',
+   def:`<p>Built in Module 3, Lab using 5 steps: <strong>1. Query research</strong> — mine PAA, AnswerThePublic, Perplexity for 30–50 high-value conversational queries. <strong>2. Citation gap identification</strong> — run the 20-query protocol; which queries return no brand citation? <strong>3. Format assignment</strong> — map each query to FAQ page, how-to guide, definitional article, POV piece, or case study. <strong>4. GEO intervention assignment</strong> — specify which of the 7 interventions to apply to each piece (minimum 3 per piece). <strong>5. Publication schedule</strong> — assign publication dates prioritising highest-value citation gaps first.</p>`,
+   seo:null,course:'Built in Module 3, Lab. Feeds directly into SoMR improvement measurement in Module 4.',
+   tags:['editorial planning','query mapping','content formats','GEO interventions'],related:['7-interventions','somr','query-coverage']},
+
+  {id:'ai-overviews',cat:'tools',icon:'⟐',name:'AI Overviews',fullName:'Google AI Overviews (formerly SGE)',type:'AI engine',source:'Google',
+   short:'Google\'s AI-generated answer summaries above search results — the primary AEO target for most brands.',
+   def:`<p><strong>Google AI Overviews</strong> (formerly SGE, launched as AI Overviews in May 2024) are AI-generated summaries appearing above traditional search results for informational queries. They synthesise from multiple indexed sources and typically include 3–5 citations. Being cited in an AI Overview for a high-volume query is the AEO/GEO equivalent of ranking #1 organically. AI Overviews data is increasingly available in Google Search Console.</p>`,
+   seo:null,course:'AI Overviews is the primary platform target throughout the course. GSC AI Overviews filter setup is covered in Module 4, Lab 2.',
+   tags:['SGE','Google','AI answers','SERP','Search Console data'],related:['aeo','rag','zero-click']},
+
+  {id:'perplexity',cat:'tools',icon:'◈',name:'Perplexity',fullName:'Perplexity AI',type:'AI search engine',source:'Perplexity AI, Inc.',
+   short:'An AI-native search engine that always shows citations — making it the best platform for manual AEO/GEO testing.',
+   def:`<p><strong>Perplexity</strong> is an AI-native answer engine that explicitly displays citations with source links on every response — making it the most useful platform for manual citation testing. Unlike Google AI Overviews (which doesn't always show sources) or ChatGPT (requiring browsing plugin), Perplexity always shows citations, making it the best tool for the 20-query manual testing protocol.</p>`,
+   seo:null,course:'Perplexity is the primary testing platform in the 20-query protocol. PerplexityBot robots.txt directives are covered in Module 2.',
+   tags:['AI search','citations visible','manual testing','RAG','PerplexityBot'],related:['rag','20-query-protocol','somr']},
+
+  {id:'profound-tool',cat:'tools',icon:'◎',name:'Profound / Otterly.ai',fullName:'Profound (AI visibility platform)',type:'AEO/GEO tool',source:'Profound',
+   short:'Purpose-built AI visibility monitoring platforms that automate SoMR tracking and competitor citation analysis.',
+   def:`<p><strong>Profound</strong> and <strong>Otterly.ai</strong> are purpose-built platforms for monitoring brand visibility across AI answer engines. They automate the 20-query testing process by continuously running target queries and reporting on citation frequency, competitor share of voice, query-level citation analysis, trend tracking, and competitor citation alerts. Free trial used in Module 0 tool setup; full platform explored in Module 4.</p>`,
+   seo:null,course:'Profound/Otterly.ai is introduced in Module 0 tool setup lab and used extensively in Module 4 measurement sessions.',
+   tags:['SoMR tracking','AI monitoring','automated testing','Otterly.ai'],related:['somr','20-query-protocol']},
+
+  {id:'screaming-frog',cat:'tools',icon:'⚙',name:'Screaming Frog',fullName:'Screaming Frog SEO Spider',type:'Technical SEO tool',source:'Screaming Frog Ltd.',
+   short:'A site crawling tool — used in the course for technical AEO audits identifying schema gaps, crawlability issues, and content structure problems.',
+   def:`<p><strong>Screaming Frog SEO Spider</strong> is a desktop website crawler that analyses pages for technical issues. In this course, configured specifically for AEO/GEO: detecting missing schema markup, identifying JavaScript-rendered content AI crawlers can't access, mapping internal linking structure, and flagging AEO-relevant page issues. Free version crawls up to 500 URLs; paid version unlimited (recommended for full audits).</p>`,
+   seo:null,course:'Used in Module 2, Lab 3 (full technical AEO audit).',
+   tags:['site crawler','technical audit','schema detection','free tier 500 URLs'],related:['crawlability','40-point-checklist']},
+
+  {id:'brand24',cat:'tools',icon:'◷',name:'Brand24',fullName:'Brand24 (brand mention monitoring)',type:'Monitoring tool',source:'Brand24',
+   short:'A brand mention monitoring platform — configured in the course to track AI Brand Mention Rate across AI platforms.',
+   def:`<p><strong>Brand24</strong> tracks when your brand name is mentioned across the web — including social media, news, and AI platform outputs. For AEO/GEO: configured to detect and alert on brand mentions within AI-generated content environments. Set up in Module 0 with brand name variants, AI platform sources, sentiment detection, and weekly mention report templates.</p>`,
+   seo:null,course:'Brand24 is set up in Module 0, Lab. AI mention tracking configuration is a deliverable.',
+   tags:['brand monitoring','mention tracking','AI mentions','social listening'],related:['ai-brand-mention-rate','somr']},
+
+  {id:'gsc',cat:'tools',icon:'⊘',name:'Google Search Console',fullName:'Google Search Console (AI Overviews filter)',type:'Analytics tool',source:'Google',
+   short:'Google\'s free webmaster tool — with an AI Overviews filter showing which queries trigger AI Overview citations for your site.',
+   def:`<p><strong>Google Search Console</strong>'s AI Overviews filter in the Search Performance report shows impressions and clicks specifically from queries where your site appears as a source in an AI Overview. This is the only direct, authoritative source of Google AI Overviews citation performance data — showing which queries trigger citations, impression counts, and click-through rates from AI Overview citations.</p>`,
+   seo:null,course:'GSC AI Overviews filter setup is Step 1 of Module 4, Lab 2.',
+   tags:['GSC','Google','AI Overviews data','impressions','CTR'],related:['ai-overviews','ai-referral-traffic']},
+
+  {id:'ga4',cat:'tools',icon:'↗',name:'GA4',fullName:'Google Analytics 4',type:'Analytics tool',source:'Google',
+   short:'Google\'s analytics platform — configured in the course with custom AI referral channel groups to track AI-originated traffic.',
+   def:`<p>For AEO/GEO measurement, the key GA4 configuration is a <strong>custom channel grouping</strong> consolidating AI referral traffic — chatgpt.com, perplexity.ai, claude.ai, bing.com (Copilot-referred) — into a single "AI Referral" channel. Without this, AI traffic is dispersed across Generic Referral and Direct channels and invisible. Module 4, Lab 1 walks through the full configuration including custom channel group, conversion events for AI-sourced sessions, and Exploration report setup.</p>`,
+   seo:null,course:'Full GA4 AI attribution setup is Module 4, Lab 1.',
+   tags:['analytics','custom channel groups','AI traffic attribution','conversion tracking'],related:['ai-referral-traffic','somr']},
+
+  {id:'ai-hallucination',cat:'ethics',icon:'◌',name:'AI hallucination',fullName:'AI hallucination / confabulation',type:'Risk concept',source:'AI research community',
+   short:'When an AI engine generates confident but factually incorrect information about your brand — a brand safety risk requiring active monitoring.',
+   def:`<p><strong>AI hallucination</strong> occurs when a language model generates confident but factually incorrect information — including false claims about real brands. Common types: incorrect product features or pricing, false executive quotes, inaccurate company history, wrong geographical presence, fabricated partnerships.</p><p>Management requires: (1) regular AI engine testing with brand queries, (2) strong entity signals (Wikipedia, Wikidata, GSC verification) giving AI engines authoritative reference data, (3) unambiguous factual brand content correcting common confusions, and (4) using official hallucination correction processes that major AI providers now offer.</p>`,
+   seo:null,course:'Brand safety and hallucination response protocols are covered in Module 0, Session 4. Includes failure case: healthcare brand with hallucinated medical misinformation.',
+   tags:['brand safety','false information','confabulation','entity correction'],related:['entity','robots-txt','ethics']},
+
+  {id:'ethics',cat:'ethics',icon:'⊜',name:'Ethical AEO',fullName:'Ethical AEO practices',type:'Ethical framework',source:'Course-specific',
+   short:'The principles distinguishing sustainable, genuine AEO from manipulative over-optimisation that degrades AI answer quality.',
+   def:`<p><strong>Ethical AEO</strong> optimises by genuinely improving content quality, accuracy, and structure — not by gaming AI systems without improving underlying value. Unethical practices to avoid: schema markup misrepresenting content, stuffing answer-formatted content into irrelevant pages, creating AI-optimised content designed to mislead users, artificially inflating authority signals.</p><p>The ethical test: does this optimisation genuinely make content more helpful and accurate for users — or does it only manipulate AI engine output? The former is ethical AEO; the latter is manipulation that risks AI de-prioritisation and reputational damage.</p>`,
+   seo:null,course:'Covered in Module 0, Session 4. The Module 1 failure case study (over-optimised news site) shows practical consequences of unethical AEO.',
+   tags:['ethical practice','over-optimisation','manipulation','user value','sustainable'],related:['ai-hallucination','over-optimisation']},
+
+  {id:'eu-ai-act',cat:'ethics',icon:'⊛',name:'EU AI Act',fullName:'EU AI Act — publisher implications',type:'Legal/regulatory',source:'European Union, 2024',
+   short:'The EU\'s AI regulation — with implications for publishers and marketers regarding training data rights, content opt-out, and disclosure obligations.',
+   def:`<p>The <strong>EU AI Act</strong> (in force August 2024) has implications for content publishers: (1) High-risk AI systems must document training data sources — the basis for publisher rights assertions over AI training content. (2) AI-generated marketing content may require disclosure in certain contexts. (3) The Act strengthens the legal basis for robots.txt AI bot blocking — making AI crawler configuration not just tactical but potentially legally significant for EU-operating organisations.</p>`,
+   seo:null,course:'EU AI Act publisher implications are introduced in Module 0, Session 4.',
+   tags:['EU regulation','AI compliance','training data rights','opt-out','publisher rights'],related:['robots-txt','ethics']},
+
+  {id:'over-optimisation',cat:'ethics',icon:'⚠',name:'Over-optimisation',fullName:'AEO over-optimisation / AI spam',type:'Risk concept',source:'Course-specific (failure case)',
+   short:'Aggressive AEO tactics disproportionate to content quality — triggering AI engine de-prioritisation rather than citation improvement.',
+   def:`<p><strong>Over-optimisation</strong> is the application of AEO tactics at a level that makes AI engines detect manipulation. Identified patterns from the Module 1 failure case: FAQPage schema on every article regardless of genuine Q&A content, all content formatted in snippet style even where long-form narrative is appropriate, high-frequency thin content purely for freshness signals, and excessive statistics/quotable phrases that aren't genuinely informative.</p><p>AI engines are trained on billions of examples of good content. Formatting that looks like high-quality citable writing without genuine informational depth is increasingly detectable — and is avoided to protect AI product user experience.</p>`,
+   seo:null,course:'Introduced in Module 1, Failure Case (over-optimised news site). Referenced throughout as the cautionary counterpoint to legitimate GEO tactics.',
+   tags:['spam signals','AI penalty','schema stuffing','thin content'],related:['ethics','cite-worthy']}
+];
+
+const GL_CAT_ORDER = ['core','technical','content','measurement','frameworks','tools','ethics'];
+let glCurrentCat = 'all';
+let glCurrentSearch = '';
+
+function glBuildAll() {
+  const body = document.getElementById('glBody');
+  if (!body) return;
+  body.innerHTML = '';
+  GL_CAT_ORDER.forEach(cat => {
+    const catTerms = GL_TERMS.filter(t => t.cat === cat);
+    const sec = document.createElement('div');
+    sec.className = 'gl-cat-section';
+    sec.id = 'glcat-' + cat;
+    const color = GL_CATS[cat].color;
+    sec.innerHTML = `
+      <div class="gl-cat-header">
+        <div class="gl-cat-stripe" style="background:${color};"></div>
+        <div class="gl-cat-name">${GL_CATS[cat].name}</div>
+        <div class="gl-cat-count" id="glcount-${cat}">${catTerms.length} terms</div>
+      </div>
+      <div class="gl-grid" id="glgrid-${cat}"></div>
+    `;
+    body.appendChild(sec);
+    const grid = sec.querySelector('.gl-grid');
+    catTerms.forEach((term, i) => {
+      grid.appendChild(glBuildCard(term, i));
+    });
+  });
+}
+
+function glEsc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function glHL(text, q) {
+  if (!q) return text;
+  const safe = q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return text.replace(new RegExp(`(${safe})`, 'gi'), '<mark>$1</mark>');
+}
+
+function glBuildCard(term, idx) {
+  const color = GL_CATS[term.cat].color;
+  const card = document.createElement('div');
+  card.className = 'gl-card';
+  card.id = 'glcard-' + term.id;
+  card.setAttribute('data-cat', term.cat);
+  card.setAttribute('data-search', [term.name, term.fullName, term.short, term.def, (term.tags||[]).join(' ')].join(' ').toLowerCase());
+  const relHTML = term.related ? `<div class="gl-related">Related: ${term.related.map(r => {
+    const rel = GL_TERMS.find(t => t.id === r);
+    return rel ? `<span class="gl-rel-link" onclick="glJump('${r}')">${rel.name}</span>` : '';
+  }).filter(Boolean).join(', ')}</div>` : '';
+  const seoHTML = term.seo ? `<div class="gl-vs-seo"><strong>vs. traditional SEO:</strong> ${term.seo}</div>` : '';
+  const courseHTML = term.course ? `<div class="gl-course-note"><strong>In the course:</strong> ${term.course}</div>` : '';
+  const tagsHTML = (term.tags||[]).map(t => `<span class="gl-tag">${glEsc(t)}</span>`).join('');
+  card.innerHTML = `
+    <div class="gl-card-top" onclick="glToggle('${term.id}')">
+      <div class="gl-icon" style="background:${color}15;color:${color};">${glEsc(term.icon)}</div>
+      <div class="gl-card-head">
+        <div class="gl-term-name" id="gltn-${term.id}">${glEsc(term.name)}</div>
+        <div class="gl-term-full">${glEsc(term.fullName)}</div>
+        <div class="gl-type-row"><span class="gl-type-badge" style="background:${color}15;color:${color};">${glEsc(term.type)}</span><span style="font-size:10px;color:var(--ink-faint);font-style:italic;">${glEsc(term.source)}</span></div>
+      </div>
+      <div class="gl-toggle-btn">▾</div>
+    </div>
+    <div class="gl-short" id="glts-${term.id}">${glEsc(term.short)}</div>
+    <div class="gl-body">
+      <div class="gl-full-def">${term.def}</div>
+      ${seoHTML}${courseHTML}
+      <div class="gl-tags">${tagsHTML}</div>
+      ${relHTML}
+    </div>`;
+  return card;
+}
+
+function glToggle(id) {
+  const card = document.getElementById('glcard-' + id);
+  if (card) card.classList.toggle('gl-open');
+}
+
+function glJump(id) {
+  const card = document.getElementById('glcard-' + id);
+  if (!card) return;
+  // expand parent section
+  const sec = card.closest('.gl-cat-section');
+  if (sec) sec.classList.remove('gl-hidden');
+  card.classList.add('gl-open');
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  card.style.outline = '2px solid var(--accent)';
+  card.style.outlineOffset = '2px';
+  setTimeout(() => { card.style.outline = ''; card.style.outlineOffset = ''; }, 1600);
+}
+
+function glFilterCat(cat, btn) {
+  glCurrentCat = cat;
+  document.querySelectorAll('.gl-cat-pill').forEach(p => {
+    p.classList.remove('active');
+    p.style.background = '';
+    p.style.borderColor = '';
+    p.style.color = '';
+  });
+  if (btn) {
+    btn.classList.add('active');
+    const color = cat === 'all' ? 'var(--accent)' : GL_CATS[cat]?.color || 'var(--accent)';
+    btn.style.background = color;
+    btn.style.borderColor = color;
+    btn.style.color = '#fff';
+  }
+  glApplyFilters();
+}
+
+function glApplyFilters() {
+  const q = glCurrentSearch.toLowerCase().trim();
+  let vis = 0;
+  const catCounts = {};
+  GL_TERMS.forEach(term => {
+    const card = document.getElementById('glcard-' + term.id);
+    if (!card) return;
+    const catMatch = glCurrentCat === 'all' || term.cat === glCurrentCat;
+    const searchMatch = !q || (card.getAttribute('data-search')||'').includes(q);
+    const show = catMatch && searchMatch;
+    card.style.display = show ? '' : 'none';
+    if (show) {
+      vis++;
+      catCounts[term.cat] = (catCounts[term.cat] || 0) + 1;
+    }
+    if (q && show) {
+      const tn = document.getElementById('gltn-' + term.id);
+      const ts = document.getElementById('glts-' + term.id);
+      if (tn) tn.innerHTML = glHL(glEsc(term.name), q);
+      if (ts) ts.innerHTML = glHL(glEsc(term.short), q);
+    } else {
+      const tn = document.getElementById('gltn-' + term.id);
+      const ts = document.getElementById('glts-' + term.id);
+      if (tn) tn.innerHTML = glEsc(term.name);
+      if (ts) ts.innerHTML = glEsc(term.short);
+    }
+  });
+  GL_CAT_ORDER.forEach(cat => {
+    const sec = document.getElementById('glcat-' + cat);
+    const count = catCounts[cat] || 0;
+    if (sec) sec.classList.toggle('gl-hidden', count === 0);
+    const ce = document.getElementById('glcount-' + cat);
+    if (ce) ce.textContent = count + ' term' + (count !== 1 ? 's' : '');
+  });
+  const vc = document.getElementById('glVisible');
+  if (vc) vc.textContent = vis;
+  const nr = document.getElementById('glNoResults');
+  if (nr) nr.classList.toggle('show', vis === 0);
+}
+
+const glSearchInput = document.getElementById('glSearch');
+if (glSearchInput) {
+  glSearchInput.addEventListener('input', function() {
+    glCurrentSearch = this.value;
+    glApplyFilters();
+  });
+}
+
+glBuildAll();
+</script>
+</body>
+</html>
